@@ -38,7 +38,13 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-
+        </div>
+        <div class="flex items-center justify-between mt-4">
+            <x-primary-button class="ml-3">
+                @if (Route::has('register'))
+                    <a href="{{ route('register') }}">Register</a>
+                @endif
+            </x-primary-button>
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
