@@ -11,6 +11,11 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('frontend.index');
+        return view('header');
+    }
+
+    public function main()
+    {
+        return view('mainContent');
     }
 }
