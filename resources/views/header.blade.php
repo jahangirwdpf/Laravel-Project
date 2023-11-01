@@ -4,7 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>News Portal</title>
+  <title>NewsBox</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('contents/backend')}}/vendors/feather/feather.css">
   <link rel="stylesheet" href="{{asset('contents/backend')}}vendors/ti-icons/css/themify-icons.css">
@@ -99,8 +99,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
+                {{Auth::user()->name}}
               </a>
                 <form class="text-center" method="POST" action="{{ route('logout') }}">
                     @csrf
@@ -155,12 +154,25 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#category" aria-expanded="false" aria-controls="category">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Repoters</span>
+              <span class="menu-title">Categories</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="category">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="main">Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="reporterView">Sub-Category</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#reporter" aria-expanded="false" aria-controls="reporter">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Reporters</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="reporter">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="main">Reporter Add</a></li>
                 <li class="nav-item"> <a class="nav-link" href="reporterView">Reporter View</a></li>

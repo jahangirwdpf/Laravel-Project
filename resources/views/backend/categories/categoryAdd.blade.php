@@ -7,14 +7,14 @@
             <div class="col-md-12 grid-margin">
                 <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                        <h3 class="font-weight-bold">Welcome to Reporter Page</h3>
-                        <h6 class="font-weight-normal mb-0">All Latest News are Here. <span class="text-primary">3 unread alerts!</span></h6>
+                        <h3 class="font-weight-bold">Welcome to Categories Page</h3>
+                        <h6 class="font-weight-normal mb-0">All Categories are Here. <span class="text-primary">3 unread alerts!</span></h6>
                     </div>
                     <div class="col-12 col-xl-4">
                         <div class="justify-content-end d-flex">
                             <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                                 <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <i class="mdi mdi-calendar"></i> Today (01 November 2023)
+                                    <i class="mdi mdi-calendar"></i> Today (02 November 2023)
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
                                     <a class="dropdown-item" href="#">January - March</a>
@@ -34,47 +34,63 @@
             <div class="col-lg-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <button type="button" class="btn btn-warning btn-md" style="float: right;"><a href="main" style="text-decoration: none">Add New</a></button>
-                    <h4 class="card-title">Reporter Details</h4>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right;">
+                    Add New
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="forms-sample" action="{{route'addcat'}}" method="post">
+                                <div class="form-group">
+                                    <label for="category">Category Name English</label>
+                                    <input type="text" class="form-control" id="category" placeholder="category" name="n_cat_name" required="">
+                                    <x-input-error :messages="$errors->get('n_cat_name')" class="mt-2" />
+                                </div>
+                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                <button class="btn btn-light">Cancel</button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <h4 class="card-title">Categories Details</h4>
                   <div class="table-responsive pt-3">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
                           <th>
-                            #
+                            ID
                           </th>
                           <th>
-                            First name
+                            Categories Name English
                           </th>
                           <th>
-                            Product
+                            Categories Name Bangla
                           </th>
                           <th>
-                            Amount
-                          </th>
-                          <th>
-                            Deadline
+                            Action
                           </th>
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($category as $row)
                         <tr class="table-info">
+                          <td>{{$row->n_cat_id}}</td>
+                          <td>{{$row->n_cat_name}}</td>
                           <td>
-                            1
-                          </td>
-                          <td>
-                            Herman Beck
-                          </td>
-                          <td>
-                            Photoshop
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2015
+                            <a class="btn btn-info" href="">Edit</a>
+                            <a class="btn btn-danger" href="">Edit</a>
                           </td>
                         </tr>
+                        @endforeach
                         <tr class="table-warning">
                           <td>
                             2

@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Title -->
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'NewsBox') }}</title>
     <!-- Favicon -->
     <link rel="icon" href="{{asset('contents/frontend')}}/img/core-img/favicon.ico">
     <!-- Stylesheet -->

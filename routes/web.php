@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\WebController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,5 +37,7 @@ Route::get('/reporterAdd', [UserController::class, 'index']);
 Route::get('/reporterView', [UserController::class, 'view']);
 Route::get('/newsAdd', [UserController::class, 'newsAdd']);
 Route::get('/newsView', [UserController::class, 'newsView']);
+Route::get('/categoryView', [CategoryController::class, 'index']);
+Route::post('/addcat', [CategoryController::class, 'addcat']);
 
 require __DIR__.'/auth.php';
