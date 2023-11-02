@@ -161,8 +161,8 @@
             </a>
             <div class="collapse" id="category">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="main">Category</a></li>
-                <li class="nav-item"> <a class="nav-link" href="reporterView">Sub-Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="add">Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Sub-Category</a></li>
               </ul>
             </div>
           </li>
@@ -195,7 +195,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="icon-bar-graph menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">International</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="charts">
@@ -207,7 +207,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="icon-grid-2 menu-icon"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">National</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
@@ -219,7 +219,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="icon-contract menu-icon"></i>
-              <span class="menu-title">Icons</span>
+              <span class="menu-title">Intertainment</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="icons">
@@ -229,22 +229,9 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="icon-head menu-icon"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href=""> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href=""> Register </a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
               <i class="icon-ban menu-icon"></i>
-              <span class="menu-title">Error pages</span>
+              <span class="menu-title">Sports</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="error">
@@ -257,7 +244,45 @@
           <li class="nav-item">
             <a class="nav-link" href="">
               <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Documentation</span>
+              <span class="menu-title">Education</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Reporters Profile</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href=""> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href=""> Register </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="icon-head menu-icon"></i>
+              <span class="menu-title">Editor Profile</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href=""> Login </a></li>
+                <li class="nav-item"> <a class="nav-link" href=""> Register </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Special</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Education</span>
             </a>
           </li>
         </ul>

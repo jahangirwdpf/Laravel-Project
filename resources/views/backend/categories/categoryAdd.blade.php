@@ -48,11 +48,12 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="forms-sample" action="{{route'addcat'}}" method="post">
+                            <form class="forms-sample" action="{{url('addcat')}}" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <label for="category">Category Name English</label>
                                     <input type="text" class="form-control" id="category" placeholder="category" name="n_cat_name" required="">
-                                    <x-input-error :messages="$errors->get('n_cat_name')" class="mt-2" />
+                                    
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                 <button class="btn btn-light">Cancel</button>
@@ -75,88 +76,75 @@
                           <th>
                             Categories Name Bangla
                           </th>
-                          <th>
+                          <th class="text-center" colspan= "2">
                             Action
                           </th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($category as $row)
-                        <tr class="table-info">
-                          <td>{{$row->n_cat_id}}</td>
-                          <td>{{$row->n_cat_name}}</td>
-                          <td>
-                            <a class="btn btn-info" href="">Edit</a>
-                            <a class="btn btn-danger" href="">Edit</a>
-                          </td>
-                        </tr>
-                        @endforeach
                         <tr class="table-warning">
+                          <td>1</td>
+                          <td>International</td>
+                          <td>International</td>
                           <td>
-                            2
+                            <button type="button" class="btn btn-primary" style="float: right;"><i class="ti ti-pencil"></i>
+                            </button>  
                           </td>
                           <td>
-                            Messsy Adam
-                          </td>
-                          <td>
-                            Flash
-                          </td>
-                          <td>
-                            $245.30
-                          </td>
-                          <td>
-                            July 1, 2015
+                            <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i>
+                            </button>  
                           </td>
                         </tr>
                         <tr class="table-danger">
+                          <td>2</td>
+                          <td>National</td>
+                          <td>National</td>
                           <td>
-                            3
+                            <button type="button" class="btn btn-primary" style="float: right;"><i class="ti ti-pencil"></i>
+                            </button>  
                           </td>
                           <td>
-                            John Richards
-                          </td>
-                          <td>
-                            Premeire
-                          </td>
-                          <td>
-                            $138.00
-                          </td>
-                          <td>
-                            Apr 12, 2015
+                            <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i>
+                            </button>  
                           </td>
                         </tr>
                         <tr class="table-success">
+                          <td>3</td>
+                          <td>Intertainment</td>
+                          <td>Intertainment</td>
                           <td>
-                            4
+                            <button type="button" class="btn btn-primary" style="float: right;"><i class="ti ti-pencil"></i>
+                            </button>  
                           </td>
                           <td>
-                            Peter Meggik
-                          </td>
-                          <td>
-                            After effects
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2015
+                            <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i>
+                            </button>  
                           </td>
                         </tr>
                         <tr class="table-primary">
+                          <td>4</td>
+                          <td>Education</td>
+                          <td>Education</td>
                           <td>
-                            5
+                            <button type="button" class="btn btn-primary" style="float: right;"><i class="ti ti-pencil"></i>
+                            </button>  
                           </td>
                           <td>
-                            Edward
+                            <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i>
+                            </button>  
+                          </td>
+                        </tr>
+                        <tr class="table-warning">
+                          <td>5</td>
+                          <td>Sports</td>
+                          <td>Sports</td>
+                          <td>
+                            <button type="button" class="btn btn-primary" style="float: right;"><i class="ti ti-pencil"></i>
+                            </button>  
                           </td>
                           <td>
-                            Illustrator
-                          </td>
-                          <td>
-                            $ 160.25
-                          </td>
-                          <td>
-                            May 03, 2015
+                            <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i>
+                            </button>  
                           </td>
                         </tr>
                       </tbody>

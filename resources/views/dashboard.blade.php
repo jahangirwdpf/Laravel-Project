@@ -110,46 +110,84 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Search Engine Marketing</td>
+                    <td>ABC</td>
                     <td class="font-weight-bold">Mr. X</td>
-                    <td>21 Sep 2018</td>
-                    <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                    <td>02/11/2023</td>
+                    <td class="font-weight-medium">
+                        <div class="dropdown">
+                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pending
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
+                            <a class="dropdown-item" href="#">Confirm</a>
+                            <a class="dropdown-item" href="#">Reject</a>
+                        </div>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Search Engine Optimization</td>
+                    <td>ABC</td>
                     <td class="font-weight-bold">Mr. X</td>
-                    <td>13 Jun 2018</td>
-                    <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                    <td>02/11/2023</td>
+                    <td class="font-weight-medium">
+                        <div class="dropdown">
+                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pending
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
+                            <a class="dropdown-item" href="#">Confirm</a>
+                            <a class="dropdown-item" href="#">Reject</a>
+                        </div>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Display Advertising</td>
+                    <td>ABC</td>
                     <td class="font-weight-bold">Mr. X</td>
-                    <td>28 Sep 2018</td>
-                    <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                    <td>02/11/2023</td>
+                    <td class="font-weight-medium">
+                        <div class="dropdown">
+                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pending
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
+                            <a class="dropdown-item" href="#">Confirm</a>
+                            <a class="dropdown-item" href="#">Reject</a>
+                        </div>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Pay Per Click Advertising</td>
+                    <td>ABC</td>
                     <td class="font-weight-bold">Mr. X</td>
-                    <td>30 Jun 2018</td>
-                    <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                    <td>02/11/2023</td>
+                    <td class="font-weight-medium">
+                        <div class="dropdown">
+                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pending
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
+                            <a class="dropdown-item" href="#">Confirm</a>
+                            <a class="dropdown-item" href="#">Reject</a>
+                        </div>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <td>E-Mail Marketing</td>
+                    <td>ABC</td>
                     <td class="font-weight-bold">Mr. X</td>
-                    <td>01 Nov 2018</td>
-                    <td class="font-weight-medium"><div class="badge badge-danger">Cancelled</div></td>
-                </tr>
-                <tr>
-                    <td>Referral Marketing</td>
-                    <td class="font-weight-bold">Mr. X</td>
-                    <td>20 Mar 2018</td>
-                    <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
-                </tr>
-                <tr>
-                    <td>Social media marketing</td>
-                    <td class="font-weight-bold">Mr. X</td>
-                    <td>26 Oct 2018</td>
-                    <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                    <td>02/11/2023</td>
+                    <td class="font-weight-medium">
+                        <div class="dropdown">
+                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pending
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
+                            <a class="dropdown-item" href="#">Confirm</a>
+                            <a class="dropdown-item" href="#">Reject</a>
+                        </div>
+                        </div>
+                    </td>
                 </tr>
                 </tbody>
             </table>

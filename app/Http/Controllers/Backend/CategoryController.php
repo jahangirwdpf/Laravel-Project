@@ -15,15 +15,19 @@ class CategoryController extends Controller
         return view ('backend.categories.categoryAdd', compact('category'));
     }
 
-    public function addcat(Request $request): RedirectResponse
+    public function addcat(Request $request)
     {
         $validated = $request->validate([
             'n_cat_name' => 'required|unique:category|max:55',
             ]);
     
-            $data=array();
-            $data[n_cat_name]->$request->n_cat_name;
+            $data['n_cat_name']=$request->n_cat_name;
             DB::table('category')->insert($data);
+
         return redirect()->back();
+    }
+
+    public function add(){
+        return view('backend.categories.categoryAdd');
     }
 }

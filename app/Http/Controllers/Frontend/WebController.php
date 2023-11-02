@@ -10,4 +10,9 @@ class WebController extends Controller
     {
         return view('layouts.index');
     }
+
+    public function single()
+    {
+        return view('layouts.singlePost');
+    }
 }
