@@ -11,7 +11,7 @@ class CategoryController extends Controller
     }
 
     public function index(){
-        $category=DB::table('category')->get();
+        $category['category']=DB::table('category')->get();
         return view ('backend.categories.categoryAdd', compact('category'));
     }
 
@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'n_cat_name' => 'required|unique:category|max:55',
             ]);
-    
+            $data = array();
             $data['n_cat_name']=$request->n_cat_name;
             DB::table('category')->insert($data);
 

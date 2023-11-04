@@ -393,18 +393,18 @@ img {
 .breaking-news-area {
   position: relative;
   z-index: 1;
-  padding: 35px 4%;
+  padding: 10px 2%;
   background-color: #f0f4f8;
-  margin: 0 10px 10px; }
+  margin: 0 5px 5px; }
   @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .breaking-news-area {
-      padding: 20px 1%; } }
+      padding: 10px 1%; } }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .breaking-news-area {
-      padding: 20px 1%; } }
+      padding: 10px 1%; } }
   @media only screen and (max-width: 767px) {
     .breaking-news-area {
-      padding: 20px 1%; } }
+      padding: 10px 1%; } }
   .breaking-news-area .breaking-news-ticker {
     position: relative;
     z-index: 1; }

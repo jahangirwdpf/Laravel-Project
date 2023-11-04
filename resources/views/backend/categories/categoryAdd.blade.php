@@ -82,8 +82,9 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @foreach($category as $row)
                         <tr class="table-warning">
-                          <td>1</td>
+                          <td>{{$row->n_cat_name}}</td>
                           <td>International</td>
                           <td>International</td>
                           <td>
@@ -95,6 +96,7 @@
                             </button>  
                           </td>
                         </tr>
+                        @endforeach
                         <tr class="table-danger">
                           <td>2</td>
                           <td>National</td>
