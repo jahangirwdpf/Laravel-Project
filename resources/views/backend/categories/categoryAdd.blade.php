@@ -89,11 +89,11 @@
                           <td>{{$row->cat_name_en}}</td>
                           <td>{{$row->cat_name_bn}}</td>
                           <td>
-                            <button type="button" class="btn btn-primary" style="float: right;" href=""><i class="ti ti-pencil"></i>
+                            <button type="button" class="btn btn-primary" style="float: right;"><a href="{{url('edit.category/'.$row->cat_id)}}"><i class="ti ti-pencil"></i></a>
                             </button>  
                           </td>
                           <td>
-                            <button type="button" class="btn btn-danger"><i class="ti ti-trash"></i>
+                            <button type="button" class="btn btn-danger"><a href="{{url('delete.category/'.$row->cat_id)}}"><i class="ti ti-trash"></i></a>
                             </button>  
                           </td>
                         </tr>

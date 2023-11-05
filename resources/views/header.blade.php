@@ -293,6 +293,8 @@
     </div>   
     <!-- page-body-wrapper ends -->
   </div>
+  <!-- Sweet Alert -->
+  <script src="sweetalert2.all.min.js"></script>
   <!-- container-scroller -->
   <!-- plugins:{{asset('contents/backend')}}/js -->
   <script src="{{asset('contents/backend')}}/vendors/js/vendor.bundle.base.js"></script>

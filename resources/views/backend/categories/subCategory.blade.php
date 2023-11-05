@@ -7,7 +7,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                        <h3 class="font-weight-bold">Welcome to Categories Page</h3>
+                        <h3 class="font-weight-bold">Welcome to Sub-Categories Page</h3>
                         <h6 class="font-weight-normal mb-0">All Categories are Here. <span class="text-primary">3 unread alerts!</span></h6>
                     </div>
                     <div class="col-12 col-xl-4">
@@ -42,7 +42,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Add Sub-Category</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -51,9 +51,9 @@
                             <form class="forms-sample" action="{{url('addcat')}}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="category">Category Name English</label>
+                                    <label for="category">Sub-Category Name English</label>
                                     <input type="text" class="form-control" id="category" placeholder="category" name="cat_name_en" required="">
-                                    <label for="category">Category Name Bangla</label>
+                                    <label for="category">Sub-Category Name Bangla</label>
                                     <input type="text" class="form-control" id="category" placeholder="category" name="cat_name_bn" required="">
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     </div>
-                    <h4 class="card-title">Categories Details</h4>
+                    <h4 class="card-title">Sub-Categories Details</h4>
                   <div class="table-responsive pt-3">
                     <table class="table table-striped">
                       <thead>
@@ -77,13 +77,19 @@
                           <th>
                             Categories Name Bangla
                           </th>
+                          <th>
+                            Sub-Categories Name English
+                          </th>
+                          <th>
+                            Sub-Categories Name Bangla
+                          </th>
                           <th class="text-center" colspan= "2">
                             Action
                           </th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($category as $row)
+                        @foreach($subCategory as $row)
                         <tr>
                           <td>{{$row->cat_id}}</td>
                           <td>{{$row->cat_name_en}}</td>
