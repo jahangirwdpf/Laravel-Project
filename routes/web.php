@@ -2,6 +2,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\WebController;
+use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Backend\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +32,14 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/', [WebController::class, 'index']);
+Route::get('/singlePost', [WebController::class, 'single']);
+Route::get('/main', [AdminController::class, 'main']);
+Route::get('/reporterAdd', [UserController::class, 'index']);
+Route::get('/reporterView', [UserController::class, 'view']);
+Route::get('/newsAdd', [UserController::class, 'newsAdd']);
+Route::get('/newsView', [UserController::class, 'newsView']);
+Route::get('/categoryView', [CategoryController::class, 'index']);
+Route::post('/addcat', [CategoryController::class, 'addcat']);
+Route::get('/add', [CategoryController::class, 'add']);
 
 require __DIR__.'/auth.php';

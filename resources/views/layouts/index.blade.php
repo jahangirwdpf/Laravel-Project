@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Title -->
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'NewsBox') }}</title>
     <!-- Favicon -->
     <link rel="icon" href="{{asset('contents/frontend')}}/img/core-img/favicon.ico">
     <!-- Stylesheet -->
@@ -137,7 +137,7 @@
                     <!-- Breaking News Widget -->
                     <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
                         <div class="title">
-                            <h6>Trending</h6>
+                            <h6>Breaking News</h6>
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
@@ -280,7 +280,7 @@
                                         <div class="single-blog-post style-2 mb-5">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/14.jpg" alt=""></a>
+                                                <a href="singlePost"><img src="{{asset('contents/frontend')}}/img/bg-img/14.jpg" alt=""></a>
                                             </div>
                                             <!-- Blog Content -->
                                             <div class="blog-content">
@@ -398,7 +398,7 @@
                                         <div class="single-blog-post style-2 mb-5">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/4.jpg" alt=""></a>
+                                                <a href="singlePost"><img src="{{asset('contents/frontend')}}/img/bg-img/4.jpg" alt=""></a>
                                             </div>
                                             <!-- Blog Content -->
                                             <div class="blog-content">
@@ -1077,7 +1077,7 @@
     <footer class="footer-area">
         <!-- Footer Logo -->
         <div class="footer-logo mb-100">
-            <a href="index.html"><img src="{{asset('contents/frontend')}}/img/core-img/logo.png" alt=""></a>
+            <a href=""><img src="{{asset('contents/frontend')}}/img/core-img/logo.png" alt=""></a>
         </div>
         <!-- Footer Content -->
         <div class="container">

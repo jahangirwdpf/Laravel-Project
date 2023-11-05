@@ -8,10 +8,19 @@
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
-
+        <div>
+            <x-input-label for="mobile" :value="__('Mobile')" />
+            <x-text-input id="mobile" class="block mt-1 w-full" type="text" name="mobile" :value="old('mobile')" required autofocus autocomplete="mobile" />
+            <x-input-error :messages="$errors->get('mobile')" class="mt-2" />
+        </div>
+        <div>
+            <x-input-label for="img_id" :value="__('Imgage')" />
+            <x-text-input id="img_id" class="block mt-1 w-full" type="text" name="img_id" :value="old('img_id')" required autofocus autocomplete="img_id" />
+            <x-input-error :messages="$errors->get('img_id')" class="mt-2" />
+        </div>
         <!-- Email Address -->
         <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('E-mail')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
