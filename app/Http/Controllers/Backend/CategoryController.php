@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\CategoryModel;
 use DB;
 
 class CategoryController extends Controller
@@ -18,16 +19,20 @@ class CategoryController extends Controller
     public function addcat(Request $request)
     {
         $validated = $request->validate([
-            'n_cat_name' => 'required|unique:category|max:55',
+            'cat_name_en' => 'required|unique:category|max:55',
+            'cat_name_bn' => 'required|unique:category|max:55',
             ]);
             $data = array();
-            $data['n_cat_name']=$request->n_cat_name;
+            $data['cat_id']=$request->cat_id;
+            $data['cat_name_en']=$request->cat_name_en;
+            $data['cat_name_bn']=$request->cat_name_bn;
             DB::table('category')->insert($data);
 
         return redirect()->back();
     }
 
     public function add(){
-        return view('backend.categories.categoryAdd');
+        $category=DB::table('category')->get();
+        return view ('backend.categories.categoryAdd', compact('category'));
     }
 }
