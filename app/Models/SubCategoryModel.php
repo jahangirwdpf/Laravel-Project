@@ -7,5 +7,5 @@ class SubCategoryModel extends Model
 {
     use HasFactory;
     protected $primaryKey = "subcat_id";
-    protected $fillable = ['subcat_name_en','subcat_name_bn'];
+    protected $fillable = ['cat_id', 'subcat_name_en', 'subcat_name_bn'];
 }

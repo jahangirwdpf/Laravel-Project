@@ -161,8 +161,8 @@
             </a>
             <div class="collapse" id="category">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="add">Category</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Sub-Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="category">Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="subCategory">Sub-Category</a></li>
               </ul>
             </div>
           </li>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\WebController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,10 +32,18 @@ Route::middleware('auth')->group(function () {
 
 // Category -------------------
 Route::post('/addcat', [CategoryController::class, 'addcat']);
-Route::get('/add', [CategoryController::class, 'add']);
+Route::get('/category', [CategoryController::class, 'add']);
 Route::get('delete.category/{cat_id}', [CategoryController::class, 'catDelete']);
 Route::get('edit.category/{cat_id}', [CategoryController::class, 'editCat']);
 Route::post('update.category/{cat_id}', [CategoryController::class, 'update']);
+
+// Sub-Category -------------------
+Route::post('/addSub-cat', [SubCategoryController::class, 'index']);
+Route::post('/addSub', [SubCategoryController::class, 'create']);
+Route::get('/subCategory', [SubCategoryController::class, 'addSubcat']);
+Route::get('delete.category/{cat_id}', [SubCategoryController::class, 'catDelete']);
+Route::get('edit.category/{cat_id}', [SubCategoryController::class, 'editCat']);
+Route::post('update.category/{cat_id}', [SubCategoryController::class, 'update']);
 });
 
 // Frontend ----------------

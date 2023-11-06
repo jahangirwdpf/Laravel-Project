@@ -48,13 +48,20 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="forms-sample" action="{{url('addcat')}}" method="post">
+                            <form class="forms-sample" action="{{url('addSub-cat')}}" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="category">Sub-Category Name English</label>
-                                    <input type="text" class="form-control" id="category" placeholder="category" name="cat_name_en" required="">
-                                    <label for="category">Sub-Category Name Bangla</label>
-                                    <input type="text" class="form-control" id="category" placeholder="category" name="cat_name_bn" required="">
+                                    <label for="cat_id">Category Name</label>
+                                      <select name="cat_id" id="cat_id" class="form-control">
+                                        <option value="0">Please select a Category</option>
+                                            @foreach ($category as $row)
+                                              <option value="{{$row->cat_id}}" {{old('')== $row->cat_id ? 'selected': ''}}>{{$row->cat_name_en}}</option>
+                                            @endforeach
+                                      </select>
+                                    <label for="sub-category-en">Sub-Category Name English</label>
+                                    <input type="text" class="form-control" id="sub-category-en" placeholder="sub-category_en" name="subcat_name_en" required="">
+                                    <label for="sub-category-bn">Sub-Category Name Bangla</label>
+                                    <input type="text" class="form-control" id="sub-category-bn" placeholder="sub-category_bn" name="subcat_name_bn" required="">
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Submit</button>
                                 <button class="btn btn-light">Cancel</button>
@@ -72,10 +79,7 @@
                             ID
                           </th>
                           <th>
-                            Categories Name English
-                          </th>
-                          <th>
-                            Categories Name Bangla
+                            Categories Name
                           </th>
                           <th>
                             Sub-Categories Name English
@@ -91,9 +95,10 @@
                       <tbody>
                         @foreach($subCategory as $row)
                         <tr>
-                          <td>{{$row->cat_id}}</td>
-                          <td>{{$row->cat_name_en}}</td>
-                          <td>{{$row->cat_name_bn}}</td>
+                          <td>{{$row->subcat_id}}</td>
+                          <td>Hi</td>
+                          <td>{{$row->subcat_name_en}}</td>
+                          <td>{{$row->subcat_name_bn}}</td>
                           <td>
                             <button type="button" class="btn btn-primary" style="float: right;" href=""><i class="ti ti-pencil"></i>
                             </button>  
