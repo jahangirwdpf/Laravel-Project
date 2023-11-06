@@ -41,8 +41,8 @@ Route::post('update.category/{cat_id}', [CategoryController::class, 'update']);
 Route::post('/addSub-cat', [SubCategoryController::class, 'index']);
 Route::post('/addSub', [SubCategoryController::class, 'create']);
 Route::get('/subCategory', [SubCategoryController::class, 'addSubcat']);
-Route::get('delete.category/{cat_id}', [SubCategoryController::class, 'catDelete']);
-Route::get('edit.category/{cat_id}', [SubCategoryController::class, 'editCat']);
+Route::get('delete.subCategory/{subcat_id}', [SubCategoryController::class, 'subcatDelete']);
+Route::get('edit.subCategory/{subcat_id}', [SubCategoryController::class, 'editSubCat']);
 Route::post('update.category/{cat_id}', [SubCategoryController::class, 'update']);
 });
 

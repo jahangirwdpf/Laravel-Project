@@ -67,6 +67,6 @@ class CategoryController extends Controller
                 'messege'=> 'Successfully Updated',
                 'alert-type'=> 'success'
             );
-            return redirect('add')->with('notice');
+            return redirect('category')->with('notice');
     }
 }
