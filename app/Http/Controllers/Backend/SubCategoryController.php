@@ -85,6 +85,6 @@ class SubCategoryController extends Controller
                 'messege'=> 'Successfully Updated',
                 'alert-type'=> 'success'
             );
-            return redirect('subcat_name_bn')->with('notice');
+            return redirect('subCategory')->with('notice');
     }
 }

@@ -100,7 +100,7 @@
                           <td>{{$row->subcat_name_en}}</td>
                           <td>{{$row->subcat_name_bn}}</td>
                           <td>
-                            <button type="button" class="btn btn-primary" style="float: right;" ><a href="{{url('delete.subCategory/'.$row->subcat_id)}}"><i class="ti ti-pencil text-light"></i></a>
+                            <button type="button" class="btn btn-primary" style="float: right;" ><a href="{{url('edit.subCategory/'.$row->subcat_id)}}"><i class="ti ti-pencil text-light"></i></a>
                             </button>  
                           </td>
                           <td>

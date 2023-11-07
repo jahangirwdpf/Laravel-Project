@@ -1,5 +1,5 @@
 @extends('header')
-@section('content')      
+@section('content')
 <!-------------------------- Welcome Section --------------------->
 <div class="main-panel">
     <div class="content-wrapper">
@@ -7,8 +7,8 @@
             <div class="col-md-12 grid-margin">
                 <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                        <h3 class="font-weight-bold">Welcome to Categories Page</h3>
-                        <h6 class="font-weight-normal mb-0">All Categories are Here. <span class="text-primary">3 unread alerts!</span></h6>
+                        <h3 class="font-weight-bold">Welcome to Sub-Categories Page</h3>
+                        <h6 class="font-weight-normal mb-0">All Sub-Categories are Here. <span class="text-primary">3 unread alerts!</span></h6>
                     </div>
                     <div class="col-12 col-xl-4">
                         <div class="justify-content-end d-flex">
@@ -34,16 +34,18 @@
             <div class="col-lg-8 stretch-card">
               <div class="card">
                 <div class="card-body">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Sub-Category</h5>
                 </div>
                 <div class="modal-body">
-                    <form class="forms-sample" action="{{url('update.category/'.$category->cat_id)}}" method="post">
+                    <form class="forms-sample" action="{{url('update.subCategory/'.$subCategory->subcat_id)}}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="category">Category Name English</label>
-                            <input type="text" class="form-control" id="category" value="{{$category->cat_name_en}}" name="cat_name_en" required="">
-                            <label for="category">Category Name Bangla</label>
-                            <input type="text" class="form-control" id="category" value="{{$category->cat_name_bn}}" name="cat_name_bn" required="">
+                            <label for="sub_category">Category Name English</label>
+                            <input type="text" class="form-control" id="sub_category" value="{{$subCategory->cat_id}}" name="cat_name_en" required="">
+                            <label for="category">Sub-Category Name English</label>
+                            <input type="text" class="form-control" id="sub_category" value="{{$subCategory->subcat_name_en}}" name="subcat_name_en" required="">
+                            <label for="category">Sub-Category Name Bangla</label>
+                            <input type="text" class="form-control" id="sub_category" value="{{$subCategory->subcat_name_bn}}" name="subcat_name_bn" required="">
                         </div>
                         <button type="submit" class="btn btn-primary mr-2">Update</button>
                         <button class="btn btn-light">Cancel</button>
