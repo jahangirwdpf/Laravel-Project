@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +45,10 @@ Route::get('/subCategory', [SubCategoryController::class, 'addSubcat']);
 Route::get('delete.subCategory/{subcat_id}', [SubCategoryController::class, 'subcatDelete']);
 Route::get('edit.subCategory/{subcat_id}', [SubCategoryController::class, 'editSubCat']);
 Route::post('update.subCategory/{subcat_id}', [SubCategoryController::class, 'update']);
+
+// News Section -------------------
+Route::get('/allNews', [NewsController::class, 'index']);
+
 });
 
 // Frontend ----------------

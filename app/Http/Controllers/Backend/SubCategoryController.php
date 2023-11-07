@@ -12,20 +12,6 @@ class SubCategoryController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(){
-        $data['category'] = CategoryModel::get();
-        return view ('backend.categories.subCategory', compact(['category' => $data]));
-    }
-
-    public function category(){
-        $data['category'] = CategoryModel::orderBy('cat_id', 'DESC')::get();
-    }
-
-    // public function create(){
-    //     $category = DB::table('category')->get();
-    //     return view ('backend.categories.subCategory', compact('subCategory'));
-    // }
-
     public function index(Request $request)
     {
         $validated = $request->validate([
@@ -48,8 +34,9 @@ class SubCategoryController extends Controller
     }
 
     public function addSubcat(){
-        $subCategory=DB::table('sub_category')->get()->sortDesc();
-        return view ('backend.categories.subCategory', compact('subCategory'));
+        $subCategory=DB::table('sub_category')->join('category', 'sub_category.cat_id','category.cat_id')->select('category.cat_name_en','category.cat_name_bn','sub_category.*')->get()->sortDesc();
+        $category=DB::table('category')->get();
+        return view ('backend.categories.subCategory', compact('subCategory', 'category'));
     }
 
     public function subcatDelete($id){
