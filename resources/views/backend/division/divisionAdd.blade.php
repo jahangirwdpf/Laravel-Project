@@ -32,7 +32,7 @@
 <!-------------------------- Please Change Me here --------------------->
         <div class="row">
             <div class="col-lg-12 stretch-card">
-              {{-- <div class="card">
+              <div class="card">
                 <div class="card-body">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right;">
                     Add New
@@ -48,7 +48,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="forms-sample" action="{{url('addDiv')}}" method="post">
+                            <form class="forms-sample" action="{{url('addDivision')}}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="division">Division Name English</label>
@@ -83,17 +83,17 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($Division as $row)
+                        @foreach($division as $row)
                         <tr>
                           <td>{{$row->div_id}}</td>
                           <td>{{$row->div_name_en}}</td>
                           <td>{{$row->div_name_bn}}</td>
                           <td>
-                            <button type="button" class="btn btn-primary" style="float: right;"><a href="{{url('edit.category/'.$row->cat_id)}}"><i class="ti ti-pencil text-light"></i></a>
+                            <button type="button" class="btn btn-primary" style="float: right;"><a href="{{url('division.edit/'.$row->div_id)}}"><i class="ti ti-pencil text-light"></i></a>
                             </button>  
                           </td>
                           <td>
-                            <button type="button" class="btn btn-danger"><a href="{{url('delete.category/'.$row->cat_id)}}"><i class="ti ti-trash text-light"></i></a>
+                            <button type="button" class="btn btn-danger"><a href="{{url('division.delete/'.$row->div_id)}}"><i class="ti ti-trash text-light"></i></a>
                             </button>  
                           </td>
                         </tr>
@@ -102,7 +102,7 @@
                     </table>
                   </div>
                 </div>
-              </div> --}}
+              </div>
             </div>
           </div>
 <!----------------- content-wrapper ends ----------------------------------------->
