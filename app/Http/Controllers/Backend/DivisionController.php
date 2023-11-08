@@ -2,15 +2,14 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
 
 class DivisionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // All Divison Show
     public function index()
     {
-        //
+        return view ('backend.division.divisionAdd');
     }
 
     /**

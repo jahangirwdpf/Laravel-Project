@@ -41,7 +41,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="sub_category">Category Name English</label>
-                            <input type="text" class="form-control" id="sub_category" value="{{$subCategory->cat_id}}" name="cat_name_en" required="">
+                            <input type="text" class="form-control" id="sub_category" value="{{$subCategory->cat_id}}" name="cat_id" required="">
                             <label for="category">Sub-Category Name English</label>
                             <input type="text" class="form-control" id="sub_category" value="{{$subCategory->subcat_name_en}}" name="subcat_name_en" required="">
                             <label for="category">Sub-Category Name Bangla</label>

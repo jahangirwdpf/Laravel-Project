@@ -15,8 +15,6 @@ class SubCategoryController extends Controller
     public function index(Request $request)
     {
         $validated = $request->validate([
-            'subcat_name_en' => 'required|unique:sub_category|max:55',
-            'subcat_name_bn' => 'required|unique:sub_category|max:55',
             ]);
             $data = array();
             $data['subcat_id']=$request->subcat_id;
@@ -57,7 +55,7 @@ class SubCategoryController extends Controller
         return view ('backend.categories.subCategoryEdit', compact('subCategory'));
     }
 
-    public function update(Request $request, $id){
+    public function updateSub(Request $request, $id){
         $validated = $request->validate([
             'subcat_name_en' => 'required|max:55',
             'subcat_name_bn' => 'required|max:55',
