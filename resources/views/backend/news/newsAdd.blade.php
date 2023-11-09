@@ -1,5 +1,6 @@
 @extends('header')
-@section('content')      
+@section('content')
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>      
 <!-------------------------- Welcome Section --------------------->
 <div class="main-panel">
     <div class="content-wrapper">
@@ -34,77 +35,155 @@
             <div class="col-lg-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="float: right;">
-                    Add New
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    {{-- <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Add News</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
+                    <div class="card-body">
+                      <h4 class="card-title">Add News Here</h4>
+                      <form class="form-sample">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="col-form-label">Title Bangla :</label>
+                            <input type="text" class="form-control" name="news_title_en" />
+                          </div>
+                          <div class="col-md-6">
+                            <label class="col-form-label">Title English :</label>
+                            <input type="text" class="form-control" name="news_title_bn" />
+                          </div>
                         </div>
-                        <div class="modal-body">
-                            <form class="forms-sample" action="{{url('addcat')}}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="category">Category Name English</label>
-                                    <input type="text" class="form-control" id="category" placeholder="category" name="cat_name_en" required="">
-                                    <label for="category">Category Name Bangla</label>
-                                    <input type="text" class="form-control" id="category" placeholder="category" name="cat_name_bn" required="">
-                                </div>
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                <button class="btn btn-light">Cancel</button>
-                            </form>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="col-form-label">Category :</label>
+                            <select name="cat_id" class="form-control" >
+                              <option selected="" disabled="">Choose Category</option>
+                                @foreach ($category as $row)
+                                  <option value="{{$row->cat_id}}">{{$row->cat_name_en}} || {{$row->cat_name_bn}}</option>
+                                @endforeach
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="col-form-label">Sub-Category :</label>
+                            <select name="subcat_id" class="form-control" >
+                              <option selected="" disabled="">Choose Sub-Category</option>
+
+                            </select>
+                          </div>
                         </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="col-form-label">Division :</label>
+                            <select name="div_id" class="form-control" >
+                              <option selected="" disabled="">Choose Division :</option>
+                                @foreach ($division as $row)
+                                  <option value="{{$row->div_id}}">{{$row->div_name_en}} || {{$row->div_name_bn}}</option>
+                                @endforeach
+                            </select>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="col-form-label">District :</label>
+                            <select name="dist_id" class="form-control" >
+                              <option selected="" disabled="">Choose District :</option>
+                                
+                            </select>
+                          </div>
                         </div>
+                        <div class="form-group">
+                          <label class="col-form-label">File Upload :</label>
+                          <input type="file" name="img[]" class="file-upload-default">
+                          <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                            <span class="input-group-append">
+                              <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label class="col-form-label">Tags Bangla :</label>
+                            <input type="text" class="form-control" name="news_tags_en" />
+                          </div>
+                          <div class="col-md-6">
+                            <label class="col-form-label">Tags English :</label>
+                            <input type="text" class="form-control" name="news_tags_bn" />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label class="col-form-label">News Details English :</label>
+                            <textarea class="textarea" placeholder="Place some text here" name="news_details-en"
+                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                          </div>
+                          <div class="col-md-12">
+                            <label class="col-form-label">News Details Bangla :</label>
+                            <textarea class="textarea" placeholder="Place some text here" name="news_details-bn"
+                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                          </div>
+                        </div>
+
+                        <hr>
+                        <h4 class="text-center">Extra Option</h4>
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <div class="form-check">
+                              <label class="form-check-label" for="bnews">
+                                <input type="checkbox" class="form-check-input" name="breaking_news" id="bnews" value="1">
+                                Breaking News
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="form-check">
+                              <label class="form-check-label" for="fsection">
+                                <input type="checkbox" class="form-check-input" name="first_section" id="fsection" value="1">
+                                First Section
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="form-check">
+                              <label class="form-check-label" for="fsectiont">
+                                <input type="checkbox" class="form-check-input" name="first_section_thumbnail" id="fsectiont" value="1">
+                                First Section Thumbnail
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-3">
+                            <div class="form-check">
+                              <label class="form-check-label" for="bthumb">
+                                <input type="checkbox" class="form-check-input" name="big_thumbnail" id="bthumb" value="1">
+                                Big Thumbnail 
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="row justify-content-center">
+                          <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                          <button class="btn btn-danger">Cancel</button>
+                        </div>
+                      </form>
                     </div>
-                    </div>
-                    <h4 class="card-title">Categories Details</h4>
-                  <div class="table-responsive pt-3">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>
-                            ID
-                          </th>
-                          <th>
-                            Categories Name English
-                          </th>
-                          <th>
-                            Categories Name Bangla
-                          </th>
-                          <th class="text-center" colspan= "2">
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach($category as $row)
-                        <tr>
-                          <td>{{$row->cat_id}}</td>
-                          <td>{{$row->cat_name_en}}</td>
-                          <td>{{$row->cat_name_bn}}</td>
-                          <td>
-                            <button type="button" class="btn btn-primary" style="float: right;"><a href="{{url('edit.category/'.$row->cat_id)}}"><i class="ti ti-pencil text-light"></i></a>
-                            </button>  
-                          </td>
-                          <td>
-                            <button type="button" class="btn btn-danger"><a href="{{url('delete.category/'.$row->cat_id)}}"><i class="ti ti-trash text-light"></i></a>
-                            </button>  
-                          </td>
-                        </tr>
-                        @endforeach
-                      </tbody>
-                    </table>
-                  </div> --}}
                 </div>
               </div>
             </div>
           </div>
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $('select[name="cat_id"]').on('change', function(){
+                var cat_id=$(this).val();
+                if(cat_id){
+                  $.ajax({
+                    url:"{{url('get/subcat/')}}/"+cat_id,
+                    type:"GET",
+                    dataType:"json",
+                    success:function(data){
+                      console.log(data)
+                    },
+                  });
+                }else{
+                  alert('danger');
+                }
+              });
+            });
+          </script>
 <!----------------- content-wrapper ends ----------------------------------------->
         </div>
     @include('footer')

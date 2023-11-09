@@ -2,23 +2,27 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\CategoryModel;
+use DB;
 
 class NewsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Show All News -----------
     public function index()
     {
-        return view ('backend.news.newsAdd');
+        $news = DB::table('news')->get();
+        $category = DB::table('category')->get();
+        $division = DB::table('divisions')->get();
+
+        return view ('backend.news.newsAdd', compact('news', 'category', 'division'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function getSubCat($cat_id)
     {
-        //
+        return $cat_id;
     }
 
     /**

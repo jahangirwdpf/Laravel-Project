@@ -18,7 +18,7 @@ class DivisionController extends Controller
         return view ('backend.division.divisionAdd', compact('division'));
     }
 
-    // Add division ---------
+    // Add Divisions ---------
     public function storeDiv(Request $request)
     {
         $validated = $request->validate([
@@ -38,7 +38,7 @@ class DivisionController extends Controller
         return redirect()->back()->with('$notice');
     }
 
-    // Edit division ---------
+    // Edit Divisions ---------
     public function editDiv($id)
     {
         $division=DB::table('divisions')->where('div_id', $id)->first();
@@ -49,9 +49,7 @@ class DivisionController extends Controller
         return view ('backend.division.divisionEdit', compact('division'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    // Update Divisions.
     public function updateDiv(Request $request, $id)
     {
         $validated = $request->validate([
@@ -70,9 +68,7 @@ class DivisionController extends Controller
             return redirect('division')->with('notice');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // Remove Divisions.
     public function destroy($id)
     {
         DB::table('divisions')->where('div_id', $id)->delete();

@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>NewsBox</title>
+  <meta name="csrf-token" content="{{csrf_token()}}">
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('contents/backend')}}/vendors/feather/feather.css">
   <link rel="stylesheet" href="{{asset('contents/backend')}}vendors/ti-icons/css/themify-icons.css">
@@ -19,6 +20,7 @@
   <link rel="stylesheet" href="{{asset('contents/backend')}}/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('contents/backend')}}/images/favicon.png" />
+  <link rel="stylesheet" href="{{asset('contents/backend')}}/summernote/summernote-bs4.css">
 </head>
 <body>
   <div class="container-scroller">
@@ -296,26 +298,33 @@
   <!-- Sweet Alert -->
   <script src="sweetalert2.all.min.js"></script>
   <!-- container-scroller -->
-  <!-- plugins:{{asset('contents/backend')}}/js -->
+  <!-- plugins js -->
   <script src="{{asset('contents/backend')}}/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
-  <!-- Plugin {{asset('contents/backend')}}/js for this page -->
+  <!-- Plugin js for this page -->
   <script src="{{asset('contents/backend')}}/vendors/chart.js/Chart.min.js"></script>
   <script src="{{asset('contents/backend')}}/vendors/datatables.net/jquery.dataTables.js"></script>
   <script src="{{asset('contents/backend')}}/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
   <script src="{{asset('contents/backend')}}/js/dataTables.select.min.js"></script>
-  <!-- End plugin {{asset('contents/backend')}}/js for this page -->
-  <!-- inject:{{asset('contents/backend')}}/js -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
   <script src="{{asset('contents/backend')}}/js/off-canvas.js"></script>
   <script src="{{asset('contents/backend')}}/js/hoverable-collapse.js"></script>
   <script src="{{asset('contents/backend')}}/js/template.js"></script>
   <script src="{{asset('contents/backend')}}/js/settings.js"></script>
   <script src="{{asset('contents/backend')}}/js/todolist.js"></script>
   <!-- endinject -->
-  <!-- Custom {{asset('contents/backend')}}/js for this page-->
+  <!-- Custom js for this page-->
   <script src="{{asset('contents/backend')}}/js/dashboard.js"></script>
   <script src="{{asset('contents/backend')}}/js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom {{asset('contents/backend')}}/js for this page-->
+  <!-- End custom js for this page-->
+  <script src="{{asset('contents/backend')}}/summernote/summernote-bs4.min.js"></script>
+<script>
+  $(function () {
+    // Summernote
+    $('.textarea').summernote()
+  })
+</script>
 </body>
 </html>
 
