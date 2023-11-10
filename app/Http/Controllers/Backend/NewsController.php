@@ -17,9 +17,7 @@ class NewsController extends Controller
         return view ('backend.news.newsAdd', compact('news', 'category', 'division'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Store News -----------
     public function getSubCat($cat_id)
     {
         return $cat_id;
