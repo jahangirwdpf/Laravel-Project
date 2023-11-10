@@ -1,6 +1,6 @@
 @extends('header')
 @section('content')
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>      
 <!-------------------------- Welcome Section --------------------->
 <div class="main-panel">
     <div class="content-wrapper">
@@ -84,16 +84,17 @@
                             </select>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <label class="col-form-label">File Upload :</label>
-                          <input type="file" name="img[]" class="file-upload-default">
-                          <div class="input-group col-xs-12">
-                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                        <div class="row">
+                        <div class="col-md-12">
+                          <label class="col-form-label">File upload :</label>
+                          <div class="input-group">
+                            <input type="file" id="" name="img[]" class="form-control file-upload-default" placeholder="Upload Image">
                             <span class="input-group-append">
-                              <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                              <button class="file-upload-browse btn btn-primary" type="button">Choose File</button>
                             </span>
                           </div>
                         </div>
+                      </div>
                         <div class="row">
                           <div class="col-md-6">
                             <label class="col-form-label">Tags Bangla :</label>
@@ -173,9 +174,9 @@
                   $.ajax({
                     url:"{{url('get/subcat/')}}/"+cat_id,
                     type:"GET",
-                    dataType:"json",
+                    dataType:"JSON",
                     success:function(data){
-                      console.log(data)
+                      console.log(data);
                     },
                   });
                 }else{
