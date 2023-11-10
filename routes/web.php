@@ -46,10 +46,10 @@ Route::middleware('auth')->group(function()
     Route::get('/division.delete/{div_id}', [DivisionController::class, 'destroy']);
 
     // News Section -------------------
-    Route::get('/get/subcat/{cat_id}', [NewsController::class, ' ']);
-    Route::get('/allNews', [NewsController::class, 'index']);
-    Route::get('/main', [AdminController::class, 'main']);
-    Route::get('/newsAdd', [UserController::class, 'newsAdd']);
-    Route::get('/newsView', [UserController::class, 'newsView']);
+    Route::get('get/subcat/{cat_id}', [NewsController::class, 'getSubCat']);
+    Route::get('/newsCreate', [NewsController::class, 'index']);
+    Route::post('/store/news', [NewsController::class, 'storeNews']);
+    Route::get('/news', [UserController::class, 'newsAdd']);
+    Route::get('/newsView', [NewsController::class, 'showNews']);
 });
 require __DIR__.'/auth.php';

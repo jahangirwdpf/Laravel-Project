@@ -7,7 +7,7 @@
             <div class="col-md-12 grid-margin">
                 <div class="row">
                     <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                        <h3 class="font-weight-bold">Welcome to Reporter Page</h3>
+                        <h3 class="font-weight-bold">Welcome to News Page</h3>
                         <h6 class="font-weight-normal mb-0">All Latest News are Here. <span class="text-primary">3 unread alerts!</span></h6>
                     </div>
                     <div class="col-12 col-xl-4">
@@ -31,135 +31,66 @@
 <!-------------------------- End Welcome Section --------------------->
 <!-------------------------- Please Change Me here --------------------->
         <div class="row">
-        <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                <button type="button" class="btn btn-warning btn-md" style="float: right;"><a href="main" style="text-decoration: none">Add New</a></button>
-                  <h4 class="card-title">News Details Table</h4>
-                  <div class="table-responsive pt-3">
-                    <table class="table table-dark">
-                      <thead>
-                        <tr>
-                          <th>
-                            #
-                          </th>
-                          <th>
-                            First name
-                          </th>
-                          <th>
-                            Amount
-                          </th>
-                          <th>
-                            Deadline
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            1
-                          </td>
-                          <td>
-                            Herman Beck
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Messsy Adam
-                          </td>
-                          <td>
-                            $245.30
-                          </td>
-                          <td>
-                            July 1, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            3
-                          </td>
-                          <td>
-                            John Richards
-                          </td>
-                          <td>
-                            $138.00
-                          </td>
-                          <td>
-                            Apr 12, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            4
-                          </td>
-                          <td>
-                            Peter Meggik
-                          </td>
-                          <td>
-                            $ 77.99
-                          </td>
-                          <td>
-                            May 15, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            Edward
-                          </td>
-                          <td>
-                            $ 160.25
-                          </td>
-                          <td>
-                            May 03, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            6
-                          </td>
-                          <td>
-                            John Doe
-                          </td>
-                          <td>
-                            $ 123.21
-                          </td>
-                          <td>
-                            April 05, 2015
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            7
-                          </td>
-                          <td>
-                            Henry Tom
-                          </td>
-                          <td>
-                            $ 150.00
-                          </td>
-                          <td>
-                            June 16, 2015
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+          <div class="col-lg-12 stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">All News</h4>
+                <div class="table-responsive pt-3">
+                  <table class="table table-striped vh-100">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Category Name</th>
+                        <th>Sub-Categories Name English</th>
+                        <th>News Title</th>
+                        <th>News Image</th>
+                        <th>News Tags</th>
+                        <th>News Details Bangla</th>
+                        <th>News Details English</th>
+                        <th class="text-center" colspan= "2">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach($newses as $row)
+                      <tr class="bg-danger">
+                        <td>{{$row->news_id}}</td>
+                        <td>{{$row->cat_name_en}} || {{$row->cat_name_bn}}</td>
+                        <td>{{$row->subcat_name_en}}</td>
+                        <td>{{$row->news_title}}</td>
+                        <td>{{$row->news_img}}</td>
+                        <td>{{$row->news_tags_en}}</td>
+                        <td>{{$row->news_details_en}}</td>
+                        <td>{{$row->news_details_bn}}</td>
+                        <td>
+                          <button type="button" class="btn btn-primary" style="float: right;" ><a href=""><i class="ti ti-pencil text-light"></i></a>
+                          </button>  
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-danger"><a href=""><i class="ti ti-trash text-light"></i></a>
+                          </button>  
+                        </td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Category Name</th>
+                        <th>Sub-Categories Name English</th>
+                        <th>News Title</th>
+                        <th>News Image</th>
+                        <th>News Tags</th>
+                        <th>News Details Bangla</th>
+                        <th>News Details English</th>
+                        <th class="text-center" colspan= "2">Action</th>
+                      </tr>
+                    </thead>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 <!----------------- content-wrapper ends ----------------------------------------->
         </div>
     @include('footer')

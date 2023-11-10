@@ -14,9 +14,7 @@ return new class extends Migration
             $table->id('news_id');
             $table->string('cat_id');
             $table->string('subcat_id')->nullable;
-            $table->string('div_id');
-            $table->string('dist_id')->nullable;
-            $table->string('user_id');
+            $table->string('user_id')->nullable;
             $table->string('news_title_en');
             $table->string('news_title_bn');
             $table->string('img');

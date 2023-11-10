@@ -1,6 +1,6 @@
 @extends('header')
 @section('content')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>      
 <!-------------------------- Welcome Section --------------------->
 <div class="main-panel">
     <div class="content-wrapper">
@@ -37,7 +37,8 @@
                 <div class="card-body">
                     <div class="card-body">
                       <h4 class="card-title">Add News Here</h4>
-                      <form class="form-sample">
+                      <form class="form-sample" action="{{url('/store/news')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                           <div class="col-md-6">
                             <label class="col-form-label">Title Bangla :</label>
@@ -67,28 +68,10 @@
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col-md-6">
-                            <label class="col-form-label">Division :</label>
-                            <select name="div_id" class="form-control" >
-                              <option selected="" disabled="">Choose Division :</option>
-                                @foreach ($division as $row)
-                                  <option value="{{$row->div_id}}">{{$row->div_name_en}} || {{$row->div_name_bn}}</option>
-                                @endforeach
-                            </select>
-                          </div>
-                          <div class="col-md-6">
-                            <label class="col-form-label">District :</label>
-                            <select name="dist_id" class="form-control" >
-                              <option selected="" disabled="">Choose District :</option>
-                                
-                            </select>
-                          </div>
-                        </div>
-                        <div class="row">
                         <div class="col-md-12">
                           <label class="col-form-label">File upload :</label>
                           <div class="input-group">
-                            <input type="file" id="" name="img[]" class="form-control file-upload-default" placeholder="Upload Image">
+                            <input type="file" id="" name="img" class="form-control file-upload-default" placeholder="Upload Image">
                             <span class="input-group-append">
                               <button class="file-upload-browse btn btn-primary" type="button">Choose File</button>
                             </span>
@@ -108,16 +91,15 @@
                         <div class="row">
                           <div class="col-md-12">
                             <label class="col-form-label">News Details English :</label>
-                            <textarea class="textarea" placeholder="Place some text here" name="news_details-en"
+                            <textarea class="textarea" placeholder="Place some text here" name="news_details_en"
                             style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                           </div>
                           <div class="col-md-12">
                             <label class="col-form-label">News Details Bangla :</label>
-                            <textarea class="textarea" placeholder="Place some text here" name="news_details-bn"
+                            <textarea class="textarea" placeholder="Place some text here" name="news_details_bn"
                             style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                           </div>
                         </div>
-
                         <hr>
                         <h4 class="text-center">Extra Option</h4>
                         <div class="row">
@@ -166,27 +148,28 @@
               </div>
             </div>
           </div>
-          <script type="text/javascript">
-            $(document).ready(function(){
-              $('select[name="cat_id"]').on('change', function(){
-                var cat_id=$(this).val();
-                if(cat_id){
-                  $.ajax({
-                    url:"{{url('get/subcat/')}}/"+cat_id,
-                    type:"GET",
-                    dataType:"JSON",
-                    success:function(data){
-                      console.log(data);
-                    },
-                  });
-                }else{
-                  alert('danger');
-                }
-              });
-            });
-          </script>
 <!----------------- content-wrapper ends ----------------------------------------->
         </div>
     @include('footer')
-<!-- partial -->    
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('select[name="cat_id"]').on('change', function(){
+          var cat_id=$(this).val();
+          if(cat_id){
+            $.ajax({
+              url:"{{url('/get/subcat/')}}/"+cat_id,
+              type:"GET",
+              dataType:"json",
+              success:function(data){
+                console.log(data);
+              },
+            });
+          }else{
+            alert('danger');
+          }
+        });
+      });
+    </script>
+  
 @endsection

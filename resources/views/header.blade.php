@@ -3,6 +3,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>NewsBox</title>
   <meta name="csrf-token" content="{{csrf_token()}}">
@@ -150,7 +151,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="dashboard">
+            <a class="nav-link" href="{{url('dashboard')}}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -163,8 +164,8 @@
             </a>
             <div class="collapse" id="category">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="category">Category</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subCategory">Sub-Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('category')}}">Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('subCategory')}}">Sub-Category</a></li>
               </ul>
             </div>
           </li>
@@ -176,8 +177,8 @@
             </a>
             <div class="collapse" id="reporter">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="main">Reporter Add</a></li>
-                <li class="nav-item"> <a class="nav-link" href="reporterView">Reporter View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('main')}}">Reporter Add</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('reporterView')}}">Reporter View</a></li>
               </ul>
             </div>
           </li>
@@ -189,8 +190,8 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="newsAdd">NewsAdd</a></li>
-                <li class="nav-item"><a class="nav-link" href="newsView">NewsView</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('newsCreate')}}">NewsAdd</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('newsView')}}">NewsView</a></li>
               </ul>
             </div>
           </li>
@@ -296,7 +297,7 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- Sweet Alert -->
-  <script src="sweetalert2.all.min.js"></script>
+  <script src="{{asset('contents/backend')}}/sweetalert2.all.min.js"></script>
   <!-- container-scroller -->
   <!-- plugins js -->
   <script src="{{asset('contents/backend')}}/vendors/js/vendor.bundle.base.js"></script>
