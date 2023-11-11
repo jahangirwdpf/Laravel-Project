@@ -35,7 +35,7 @@ class SubCategoryController extends Controller
     // Show Sub-Category -----------
     public function addSubcat(){
         $subCategory=DB::table('sub_category')->join('category', 'sub_category.cat_id','category.cat_id')->select('category.cat_name_en','category.cat_name_bn','sub_category.*')->get()->sortDesc();
-        $category=DB::table('category')->get();
+        $category=DB::table('category')->get()->sortDesc();
         return view ('backend.categories.subCategory', compact('subCategory', 'category'));
     }
 

@@ -35,8 +35,8 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">All News</h4>
-                <div class="table-responsive pt-3">
-                  <table class="table table-striped vh-100">
+                <div class="table-responsive pt-3" style="width: 100%">
+                  <table class="table table-striped vh-100" >
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -52,12 +52,12 @@
                     </thead>
                     <tbody>
                       @foreach($newses as $row)
-                      <tr class="bg-danger">
+                      <tr>
                         <td>{{$row->news_id}}</td>
                         <td>{{$row->cat_name_en}} || {{$row->cat_name_bn}}</td>
-                        <td>{{$row->subcat_name_en}}</td>
-                        <td>{{$row->news_title}}</td>
-                        <td>{{$row->news_img}}</td>
+                        <td>{{'hh'}}</td>
+                        <td>{{$row->news_title_en}}</td>
+                        <td><img src="{{asset('img/'.$row->img)}}" alt=""></td>
                         <td>{{$row->news_tags_en}}</td>
                         <td>{{$row->news_details_en}}</td>
                         <td>{{$row->news_details_bn}}</td>
