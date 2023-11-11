@@ -71,7 +71,8 @@
                     </div>
                     </div>
                     <h4 class="card-title">Sub-Categories Details</h4>
-                  <div class="table-responsive pt-3">
+                  
+                    <div class="table-responsive pt-3">
                     <table class="table table-striped">
                       <thead>
                         <tr>
