@@ -61,7 +61,7 @@
                           </div>
                           <div class="col-md-6">
                             <label class="col-form-label">Sub-Category :</label>
-                            <select name="subcat_id" class="form-control" >
+                            <select name="subcat_id" class="form-control" id="subcat_id">
                               <option selected="" disabled="">Choose Sub-Category</option>
 
                             </select>
