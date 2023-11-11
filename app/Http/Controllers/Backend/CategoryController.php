@@ -22,11 +22,11 @@ class CategoryController extends Controller
             $data['cat_name_bn']=$request->cat_name_bn;
             DB::table('category')->insert($data);
             
-            $notice = array(
-                'messege'=> 'Successfully Added',
-                'alert-type'=> 'success'
-            );
-        return redirect()->back()->with('$notice');
+            // $notice = array(
+            //     'messege'=> 'Successfully Added',
+            //     'alert-type'=> 'success'
+            // );
+        return redirect()->back()->with('message','Successfully Added Category');
     }
 
     public function add(){
