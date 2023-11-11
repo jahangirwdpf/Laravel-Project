@@ -12,6 +12,7 @@ class SubCategoryController extends Controller
         $this->middleware('auth');
     }
 
+    // Store Sub-Category -----------
     public function index(Request $request)
     {
         $validated = $request->validate([
@@ -31,14 +32,14 @@ class SubCategoryController extends Controller
         return redirect()->back()->with('$notice');
     }
 
+    // Show Sub-Category -----------
     public function addSubcat(){
-        
         $subCategory=DB::table('sub_category')->join('category', 'sub_category.cat_id','category.cat_id')->select('category.cat_name_en','category.cat_name_bn','sub_category.*')->get()->sortDesc();
-
         $category=DB::table('category')->get();
         return view ('backend.categories.subCategory', compact('subCategory', 'category'));
     }
 
+    // Remove Sub-Category -----------
     public function subcatDelete($id){
         DB::table('sub_category')->where('subcat_id', $id)->delete();
         $notice = array(
@@ -48,6 +49,7 @@ class SubCategoryController extends Controller
         return redirect()->back()->with('$notice');
     }
 
+    // Edit Sub-Category -----------
     public function editSubCat($id){
         $subCategory=DB::table('sub_category')->where('subcat_id', $id)->first();
         $notice = array(
@@ -57,6 +59,7 @@ class SubCategoryController extends Controller
         return view ('backend.categories.subCategoryEdit', compact('subCategory'));
     }
 
+    // Update Sub-Category -----------
     public function updateSub(Request $request, $id){
         $validated = $request->validate([
             'subcat_name_en' => 'required|max:55',

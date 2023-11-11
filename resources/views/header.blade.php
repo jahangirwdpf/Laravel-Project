@@ -3,8 +3,10 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>NewsBox</title>
+  <meta name="csrf-token" content="{{csrf_token()}}">
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('contents/backend')}}/vendors/feather/feather.css">
   <link rel="stylesheet" href="{{asset('contents/backend')}}vendors/ti-icons/css/themify-icons.css">
@@ -19,6 +21,7 @@
   <link rel="stylesheet" href="{{asset('contents/backend')}}/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('contents/backend')}}/images/favicon.png" />
+  <link rel="stylesheet" href="{{asset('contents/backend')}}/summernote/summernote-bs4.css">
 </head>
 <body>
   <div class="container-scroller">
@@ -148,7 +151,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="dashboard">
+            <a class="nav-link" href="{{url('dashboard')}}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -161,8 +164,8 @@
             </a>
             <div class="collapse" id="category">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="category">Category</a></li>
-                <li class="nav-item"> <a class="nav-link" href="subCategory">Sub-Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('category')}}">Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('subCategory')}}">Sub-Category</a></li>
               </ul>
             </div>
           </li>
@@ -174,8 +177,8 @@
             </a>
             <div class="collapse" id="reporter">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="main">Reporter Add</a></li>
-                <li class="nav-item"> <a class="nav-link" href="reporterView">Reporter View</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('main')}}">Reporter Add</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('reporterView')}}">Reporter View</a></li>
               </ul>
             </div>
           </li>
@@ -187,8 +190,8 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="newsAdd">NewsAdd</a></li>
-                <li class="nav-item"><a class="nav-link" href="newsView">NewsView</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('newsCreate')}}">NewsAdd</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url('newsView')}}">NewsView</a></li>
               </ul>
             </div>
           </li>
@@ -294,28 +297,35 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- Sweet Alert -->
-  <script src="sweetalert2.all.min.js"></script>
+  <script src="{{asset('contents/backend')}}/sweetalert2.all.min.js"></script>
   <!-- container-scroller -->
-  <!-- plugins:{{asset('contents/backend')}}/js -->
+  <!-- plugins js -->
   <script src="{{asset('contents/backend')}}/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
-  <!-- Plugin {{asset('contents/backend')}}/js for this page -->
+  <!-- Plugin js for this page -->
   <script src="{{asset('contents/backend')}}/vendors/chart.js/Chart.min.js"></script>
   <script src="{{asset('contents/backend')}}/vendors/datatables.net/jquery.dataTables.js"></script>
   <script src="{{asset('contents/backend')}}/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
   <script src="{{asset('contents/backend')}}/js/dataTables.select.min.js"></script>
-  <!-- End plugin {{asset('contents/backend')}}/js for this page -->
-  <!-- inject:{{asset('contents/backend')}}/js -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
   <script src="{{asset('contents/backend')}}/js/off-canvas.js"></script>
   <script src="{{asset('contents/backend')}}/js/hoverable-collapse.js"></script>
   <script src="{{asset('contents/backend')}}/js/template.js"></script>
   <script src="{{asset('contents/backend')}}/js/settings.js"></script>
   <script src="{{asset('contents/backend')}}/js/todolist.js"></script>
   <!-- endinject -->
-  <!-- Custom {{asset('contents/backend')}}/js for this page-->
+  <!-- Custom js for this page-->
   <script src="{{asset('contents/backend')}}/js/dashboard.js"></script>
   <script src="{{asset('contents/backend')}}/js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom {{asset('contents/backend')}}/js for this page-->
+  <!-- End custom js for this page-->
+  <script src="{{asset('contents/backend')}}/summernote/summernote-bs4.min.js"></script>
+<script>
+  $(function () {
+    // Summernote
+    $('.textarea').summernote()
+  })
+</script>
 </body>
 </html>
 

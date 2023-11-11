@@ -68,18 +68,10 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
-                          <th>
-                            ID
-                          </th>
-                          <th>
-                            Categories Name English
-                          </th>
-                          <th>
-                            Categories Name Bangla
-                          </th>
-                          <th class="text-center" colspan= "2">
-                            Action
-                          </th>
+                          <th>ID</th>
+                          <th>Categories Name English</th>
+                          <th>Categories Name Bangla</th>
+                          <th class="text-center" colspan= "2">Action</th>
                         </tr>
                       </thead>
                       <tbody>

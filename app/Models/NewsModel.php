@@ -5,6 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class NewsModel extends Model
 {
-    use HasFactory;
     protected $primaryKey = "news_id";
+    use HasFactory;
 }
