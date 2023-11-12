@@ -30,67 +30,53 @@
         </div>
 <!-------------------------- End Welcome Section --------------------->
 <!-------------------------- Please Change Me here --------------------->
-        <div class="row">
-          <div class="col-lg-12 stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">All News</h4>
-                <div class="table-responsive pt-3" style="width: 100%">
-                  <table class="table table-striped vh-100" >
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Category Name</th>
-                        <th>Sub-Categories Name English</th>
-                        <th>News Title</th>
-                        <th>News Image</th>
-                        <th>News Tags</th>
-                        <th>News Details Bangla</th>
-                        <th>News Details English</th>
-                        <th class="text-center" colspan= "2">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach($newses as $row)
-                      <tr>
-                        <td>{{$row->news_id}}</td>
-                        <td>{{$row->cat_name_en}} || {{$row->cat_name_bn}}</td>
-                        <td>{{$row->subcat_id}}</td>
-                        <td>{{$row->news_title_en}}</td>
-                        <td><img src="{{asset('img/'.$row->img)}}" alt=""></td>
-                        <td>{{$row->news_tags_en}}</td>
-                        <td>{{$row->news_details_en}}</td>
-                        <td>{{$row->news_details_bn}}</td>
-                        <td>
-                          <button type="button" class="btn btn-primary" style="float: right;" ><a href=""><i class="ti ti-pencil text-light"></i></a>
-                          </button>  
-                        </td>
-                        <td>
-                          <button type="button" class="btn btn-danger"><a href=""><i class="ti ti-trash text-light"></i></a>
-                          </button>  
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Category Name</th>
-                        <th>Sub-Categories Name English</th>
-                        <th>News Title</th>
-                        <th>News Image</th>
-                        <th>News Tags</th>
-                        <th>News Details Bangla</th>
-                        <th>News Details English</th>
-                        <th class="text-center" colspan= "2">Action</th>
-                      </tr>
-                    </thead>
-                  </table>
+          <div class="row">
+            <div class="col-lg-12 stretch-card">
+              <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">All News</h4>
+                  <div class="table-responsive pt-3">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Category Name</th>
+                          <th>Sub-Categories Name English</th>
+                          <th>News Title</th>
+                          <th>News Image</th>
+                          <th>News Tags</th>
+                          <th>News Details Bangla</th>
+                          <th>News Details English</th>
+                          <th class="text-center" colspan= "2">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($newses as $row)
+                        <tr>
+                          <td>{{$row->news_id}}</td>
+                          <td>{{$row->cat_name_en}} || {{$row->cat_name_bn}}</td>
+                          <td>{{$row->subcat_name_en}}</td>
+                          <td>{{$row->news_title_en}}</td>
+                          <td><img src="{{asset('img/'.$row->img)}}" alt=""></td>
+                          <td>{{$row->news_tags_en}}</td>
+                          <td>{{$row->news_details_bn}}</td>
+                          <td>
+                            <button type="button" class="btn btn-primary" style="float: right;"><a href=""><i class="ti ti-pencil text-light"></i></a>
+                            </button>  
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-danger"><a href=""><i class="ti ti-trash text-light"></i></a>
+                            </button>  
+                          </td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 <!----------------- content-wrapper ends ----------------------------------------->
         </div>
     @include('footer')

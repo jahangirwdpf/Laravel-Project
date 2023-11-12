@@ -17,9 +17,10 @@ class NewsController extends Controller
     }
 
     // Json Data -----------
-    public function getSubCat($id)
+    public function getSubCat($cat_id)
     {
-        $subCat = DB::table('sub_category')->where('cat_id',$id)->get();
+        
+        $subCat = DB::table('sub_category')->where('cat_id',$cat_id)->get();
         return response()->json($subCat);
     }
 
@@ -43,8 +44,8 @@ class NewsController extends Controller
             $data['first_section_thumbnail']=$request->first_section_thumbnail;
             $data['big_thumbnail']=$request->big_thumbnail;
             $data['post_date']=date('d-m-Y');
-
             $image=$request->img;
+
             $image_news=time().'.'.$image->getClientOriginalExtension();
             $request->img->move('img', $image_news);
             $data['img']=$image_news;
@@ -52,17 +53,17 @@ class NewsController extends Controller
             DB::table('news')->insert($data, $image);
             return redirect()->back()->with('message', 'Successfully News Inserted');
 
-            $image=$request->img;
-            if(hasFile('$image')){
-                $image_news=uniqueid().'.'.$image->getClientOriginalExtension();
-                Image::make($image_news)->resize(500,350)->save('public/newsImages/'.$image_news);
-                $data['img']='public/newsImages/'.$image_news;
+            // $image=$request->img;
+            // if(hasFile('$image')){
+            //     $image_news=uniqueid().'.'.$image->getClientOriginalExtension();
+            //     Image::make($image_news)->resize(500,350)->save('public/newsImages/'.$image_news);
+            //     $data['img']='public/newsImages/'.$image_news;
 
-                DB::table('news')->insert($data);
-                return redirect()->back();
-            }else{
-                return redirect()->back();
-            }
+            //     DB::table('news')->insert($data);
+            //     return redirect()->back();
+            // }else{
+            //     return redirect()->back();
+            // }
     }
 
     // Show News -----------------------------
@@ -70,15 +71,11 @@ class NewsController extends Controller
     {
         $newses = DB::table('news')
         ->join('category', 'news.cat_id','=','category.cat_id')
-        // ->join('sub_category', 'news.subcat_id','=','sub_category.subcat_id')
-        ->select('news.*','category.cat_name_en','category.cat_name_bn')
-        ->get();
+        ->join('sub_category', 'news.subcat_id','=','sub_category.subcat_id')
+        ->select('news.*','category.cat_name_en','category.cat_name_bn','sub_category.subcat_name_en')
+        ->get()->sortDesc();
         // return dd($newses);
-        return view ('backend.news.newsView', compact('newses'));
-
-        // $subCategory = DB::table('sub_category')->join('category', 'sub_category.cat_id','category.cat_id')->select('category.cat_name_en','category.cat_name_bn','sub_category.*')->get()->sortDesc();
-        // $category = DB::table('category')->get();
-  
+        return view ('backend.news.newsView', compact('newses'));  
     }
 
     // Edit News -------------------------
