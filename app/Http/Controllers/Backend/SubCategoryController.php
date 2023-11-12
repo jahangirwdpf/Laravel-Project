@@ -25,11 +25,11 @@ class SubCategoryController extends Controller
 
             DB::table('sub_category')->insert($data);
             
-            $notice = array(
-                'messege'=> 'Successfully Added',
-                'alert-type'=> 'success'
-            );
-        return redirect()->back()->with('$notice');
+            // $notice = array(
+            //     'messege'=> 'Successfully Added',
+            //     'alert-type'=> 'success'
+            // );
+        return redirect()->back()->with();
     }
 
     // Show Sub-Category -----------
@@ -42,11 +42,11 @@ class SubCategoryController extends Controller
     // Remove Sub-Category -----------
     public function subcatDelete($id){
         DB::table('sub_category')->where('subcat_id', $id)->delete();
-        $notice = array(
-            'messege'=> 'Successfully Deleted',
-            'alert-type'=> 'success'
-        );
-        return redirect()->back()->with('$notice');
+        // $notice = array(
+        //     'messege'=> 'Successfully Deleted',
+        //     'alert-type'=> 'success'
+        // );
+        return redirect()->back();
     }
 
     // Edit Sub-Category -----------
@@ -61,20 +61,21 @@ class SubCategoryController extends Controller
 
     // Update Sub-Category -----------
     public function updateSub(Request $request, $id){
-        $validated = $request->validate([
-            'subcat_name_en' => 'required|max:55',
-            'subcat_name_bn' => 'required|max:55',
-            ]);
+        // $validated = $request->validate([
+        //     'subcat_name_en' => 'required|max:55',
+        //     'subcat_name_bn' => 'required|max:55',
+        //     ]);
             $data = array();
             $data['subcat_id']=$request->subcat_id;
             $data['cat_id']=$request->cat_id;
             $data['subcat_name_en']=$request->subcat_name_en;
             $data['subcat_name_bn']=$request->subcat_name_bn;
             DB::table('sub_category')->where('subcat_id', $id)->update($data);
-            $notice = array(
-                'messege'=> 'Successfully Updated',
-                'alert-type'=> 'success'
-            );
-            return redirect('subCategory')->with('notice');
+            
+            // $notice = array(
+            //     'messege'=> 'Successfully Updated',
+            //     'alert-type'=> 'success'
+            // );
+            return redirect('subCategory');
     }
 }

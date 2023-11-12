@@ -1,6 +1,6 @@
 @extends('header')
 @section('content')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <!-------------------------- Welcome Section --------------------->
 <div class="main-panel">
     <div class="content-wrapper">
@@ -71,7 +71,7 @@
                         <div class="col-md-12">
                           <label class="col-form-label">File upload :</label>
                           <div class="input-group">
-                            <input type="file" id="" name="img[]" class="form-control file-upload-default" placeholder="Upload Image">
+                            <input type="file" id="" name="img" class="form-control file-upload-default" placeholder="Upload Image">
                             <span class="input-group-append">
                               <button class="file-upload-browse btn btn-primary" type="button">Choose File</button>
                             </span>
@@ -92,12 +92,12 @@
                           <div class="col-md-12">
                             <label class="col-form-label">News Details English :</label>
                             <textarea class="textarea" placeholder="Place some text here" name="news_details_en"
-                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                            style="width: 100px; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                           </div>
                           <div class="col-md-12">
                             <label class="col-form-label">News Details Bangla :</label>
                             <textarea class="textarea" placeholder="Place some text here" name="news_details_bn"
-                            style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                            style="width: 100px; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                           </div>
                         </div>
                         <hr>
@@ -151,28 +151,22 @@
 <!----------------- content-wrapper ends ----------------------------------------->
         </div>
     @include('footer')
-
     <script type="text/javascript">
       $(document).ready(function(){
         $('select[name="cat_id"]').on('change', function(){
           var cat_id=$(this).val();
-          if(cat_id){
             $.ajax({
-              url:"{{url('/get/subcat/')}}/"+cat_id,
-              type:"GET",
+              url:"{{url('get/subcat/')}}/"+cat_id,
+              Method:"GET",
               dataType:"json",
               success:function(data){
-                $("#subcat_id").empty(){
+                console.log(data);
+                $("#subcat_id").empty();
                   $.each(data,function(key,value){
-                    $(#subcat_id).apend('<option value="'+value.id+'">'+value.subcat_name_en+'</option>');
+                    $('#subcat_id').append('<option value="'+value.subcat_id+'">'+value.subcat_name_en+'</option>');
                   });
                 },
-                
-              },
             });
-          }else{
-            alert('danger');
-          }
         });
       });
     </script>

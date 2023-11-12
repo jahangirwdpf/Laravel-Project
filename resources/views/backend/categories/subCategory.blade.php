@@ -55,7 +55,7 @@
                                       <select name="cat_id" id="cat_id" class="form-control" required="">
                                         <option value="0">Please select a Category</option>
                                             @foreach ($category as $row)
-                                              <option value="{{$row->cat_id}}">{{$row->cat_name_en}} || {{$row->cat_name_bn}}</option>
+                                              <option value="{{$row->cat_id}}">{{$row->cat_name_en}}</option>
                                             @endforeach
                                       </select>
                                     <label for="sub-category-en">Sub-Category Name English</label>
@@ -87,7 +87,7 @@
                         @foreach($subCategory as $row)
                         <tr>
                           <td>{{$row->subcat_id}}</td>
-                          <td>{{$row->cat_name_en}} || {{$row->cat_name_bn}}</td>
+                          <td>{{$row->cat_name_en}}</td>
                           <td>{{$row->subcat_name_en}}</td>
                           <td>{{$row->subcat_name_bn}}</td>
                           <td>
