@@ -55,7 +55,7 @@
                       <tr>
                         <td>{{$row->news_id}}</td>
                         <td>{{$row->cat_name_en}} || {{$row->cat_name_bn}}</td>
-                        <td>{{'hh'}}</td>
+                        <td>{{$row->subcat_id}}</td>
                         <td>{{$row->news_title_en}}</td>
                         <td><img src="{{asset('img/'.$row->img)}}" alt=""></td>
                         <td>{{$row->news_tags_en}}</td>

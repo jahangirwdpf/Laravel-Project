@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubCategoryModel extends Model
 {
-    use HasFactory;
     protected $primaryKey = "subcat_id";
-    protected $fillable = ['cat_id', 'subcat_name_en', 'subcat_name_bn'];
+    use HasFactory;
+    
 }

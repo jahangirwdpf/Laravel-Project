@@ -55,7 +55,7 @@
                             <select name="cat_id" class="form-control" >
                               <option selected="" disabled="">Choose Category</option>
                                 @foreach ($category as $row)
-                                  <option value="{{$row->cat_id}}">{{$row->cat_name_en}} || {{$row->cat_name_bn}}</option>
+                                  <option value="{{$row->cat_id}}">{{$row->cat_name_en}}</option>
                                 @endforeach
                             </select>
                           </div>
@@ -162,13 +162,11 @@
               type:"GET",
               dataType:"json",
               success:function(data){
-                $("#subcat_id").empty(){
+                $("#subcat_id").empty();
                   $.each(data,function(key,value){
-                    $(#subcat_id).apend('<option value="'+value.id+'">'+value.subcat_name_en+'</option>');
+                    $(#subcat_id).append('<option value="'+value.id+'">'+value.subcat_name_en+'</option>');
                   });
                 },
-                
-              },
             });
           }else{
             alert('danger');
