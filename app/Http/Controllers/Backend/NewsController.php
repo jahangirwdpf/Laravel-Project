@@ -72,28 +72,57 @@ class NewsController extends Controller
         $newses = DB::table('news')
         ->join('category', 'news.cat_id','=','category.cat_id')
         ->join('sub_category', 'news.subcat_id','=','sub_category.subcat_id')
-        ->select('news.*','category.cat_name_en','category.cat_name_bn','sub_category.subcat_name_en')
+        ->select('news.*','category.cat_name_en','category.cat_name_bn','sub_category.subcat_name_bn', 'sub_category.subcat_name_en')
         ->get()->sortDesc();
         // return dd($newses);
-        $bigThumbnail=DB::table('news')->where('big_thumbnail',1)->get();
-        return view ('backend.news.newsView', compact('newses', 'bigThumbnail'));  
+        return view ('backend.news.newsView', compact('newses'));  
     }
 
     // Edit News -------------------------
-    public function edit(string $id)
+    public function editNews($id)
     {
-        //
+        $news=DB::table('news')->where('news_id', $id)->first();
+        $category = DB::table('category')->get();
+        $subCat = DB::table('sub_category')->where('cat_id',$news->cat_id)->get();
+        $image_news = DB::table('news')->get();
+        return view('backend.news.newsEdit', compact('news','category', 'image_news', 'subCat'));
     }
 
     // Update News -------------------------
-    public function update(Request $request, string $id)
+    public function updateNews(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'cat_id' => 'required',
+            ]);
+            $data = array();
+            $data['news_title_en']=$request->news_title_en;
+            $data['news_title_bn']=$request->news_title_bn;
+            $data['cat_id']=$request->cat_id;
+            $data['subcat_id']=$request->subcat_id;
+            $data['news_details_en']=$request->news_details_en;
+            $data['news_details_bn']=$request->news_details_bn;
+            $data['news_tags_en']=$request->news_tags_en;
+            $data['news_tags_bn']=$request->news_tags_bn;
+            $data['breaking_news']=$request->breaking_news;
+            $data['first_section']=$request->first_section;
+            $data['first_section_thumbnail']=$request->first_section_thumbnail;
+            $data['big_thumbnail']=$request->big_thumbnail;
+            $image=$request->img;
+
+            $image_news=time().'.'.$image->getClientOriginalExtension();
+            $request->img->move('img', $image_news);
+            $data['img']=$image_news;
+
+            DB::table('news')->insert($data, $image);
+            return redirect()->back()->with('message', 'Successfully News Inserted'); 
     }
 
     // Remove News -------------------------
-    public function destroy(string $id)
+    public function destroyNews($id)
     {
-        //
+        $news=DB::table('news')->where('news_id', $id)->first();
+        // unlink($news->img);
+        DB::table('news')->where('news_id', $id)->delete();
+        return redirect()->back()->with('message', 'Successfully News Deleted');
     }
 }
