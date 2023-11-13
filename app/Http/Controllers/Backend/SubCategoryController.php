@@ -29,7 +29,7 @@ class SubCategoryController extends Controller
             //     'messege'=> 'Successfully Added',
             //     'alert-type'=> 'success'
             // );
-        return redirect()->back()->with();
+        return redirect()->back();
     }
 
     // Show Sub-Category -----------

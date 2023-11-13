@@ -75,7 +75,8 @@ class NewsController extends Controller
         ->select('news.*','category.cat_name_en','category.cat_name_bn','sub_category.subcat_name_en')
         ->get()->sortDesc();
         // return dd($newses);
-        return view ('backend.news.newsView', compact('newses'));  
+        $bigThumbnail=DB::table('news')->where('big_thumbnail',1)->get();
+        return view ('backend.news.newsView', compact('newses', 'bigThumbnail'));  
     }
 
     // Edit News -------------------------

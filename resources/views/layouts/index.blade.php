@@ -1,6 +1,3 @@
-@php
-    $catagory=DB::table('category')->get();
-@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -50,15 +47,15 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    @foreach($catagory as $row)
-                                    <li><a href="">{{$row->cat_name_en}}</a>
+                                    @foreach($category as $row)
+                                    <li><a href="">{{$row->cat_name_bn}}</a>
                                         @php
                                             $subCatagory=DB::table('sub_category')->where('cat_id', $row->cat_id)->get();
                                         @endphp
                                         <div class="megamenu">
                                             <ul class="dropdown">
                                                 @foreach($subCatagory as $row)
-                                                    <li class="title"><a href="">{{$row->subcat_name_en}}</a></li>
+                                                    <li class="title"><a href="">{{$row->subcat_name_bn}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -86,9 +83,12 @@
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
-                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</a></li>
+                                @foreach($newses as $row)
+                                    <li class="title"><a href="">{{$row->news_title_en}}</a></li>
+                                @endforeach
+                                {{-- <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</a></li>
                                 <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque</a></li>
+                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -107,42 +107,35 @@
                     <div class="row">
                         <!-- Single Blog Post Area -->
                         <div class="col-12 col-md-6">
+                            @foreach($bigThumbnail as $row)
                             <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/1.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 300px"></a>
                                 </div>
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Traffic Problems in Time Square</a>
+                                    <span class="post-date">{{$row->post_date}}</span>
+                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
                                 </div>
                             </div>
+                            <br>
+                            @endforeach
                         </div>
                         <div class="col-12 col-md-6">
                             <!-- Single Blog Post Area -->
                             <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
+                                @foreach($firstThumbnail as $row)
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/2.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 600px"></a>
                                 </div>
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">The best way to spend your holliday</a>
+                                    <span class="post-date">{{$row->post_date}}</span>
+                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
                                 </div>
-                            </div>
-                            <!-- Single Blog Post Area -->
-                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="500ms" data-duration="1000ms">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/3.jpg" alt=""></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Sport results for the weekend games</a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -154,42 +147,35 @@
                     <div class="row">
                         <!-- Single Blog Post Area -->
                         <div class="col-12 col-md-6">
+                            @foreach($bigThumbnail as $row)
                             <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/1.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 300px"></a>
                                 </div>
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Traffic Problems in Time Square</a>
+                                    <span class="post-date">{{$row->post_date}}</span>
+                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
                                 </div>
                             </div>
+                            <br>
+                            @endforeach
                         </div>
                         <div class="col-12 col-md-6">
                             <!-- Single Blog Post Area -->
                             <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
+                                @foreach($firstThumbnail as $row)
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/2.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 600px"></a>
                                 </div>
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">The best way to spend your holliday</a>
+                                    <span class="post-date">{{$row->post_date}}</span>
+                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
                                 </div>
-                            </div>
-                            <!-- Single Blog Post Area -->
-                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="500ms" data-duration="1000ms">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/3.jpg" alt=""></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <a href="#" class="post-title">Sport results for the weekend games</a>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -222,117 +208,20 @@
                                 <div class="row">
                                     <!-- Single News Area -->
                                     <div class="col-12 col-sm-6">
+                                        @foreach($firstSection as $row)
                                         <div class="single-blog-post style-2 mb-5">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
-                                                <a href="singlePost"><img src="{{asset('contents/frontend')}}/img/bg-img/14.jpg" alt=""></a>
+                                                <a href="singlePost"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 250px"></a>
                                             </div>
                                             <!-- Blog Content -->
                                             <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
-                                                <a href="#" class="post-author">By Michael Smith</a>
+                                                <span class="post-date">{{$row->post_date}}</span>
+                                                <a href="#" class="post-title">{{$row->news_title_en}}</a>
+                                                <a href="#" class="post-author">{{$row->news_tags_en}}</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="single-blog-post style-2 mb-5">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/15.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
-                                                <a href="#" class="post-author">By Michael Smith</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="single-blog-post d-flex style-4 mb-30">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/16.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="single-blog-post d-flex style-4 mb-30">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/17.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="single-blog-post d-flex style-4 mb-30">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/18.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="single-blog-post d-flex style-4 mb-30">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/19.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="single-blog-post d-flex style-4 mb-30">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/20.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6">
-                                        <div class="single-blog-post d-flex style-4 mb-30">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/21.jpg" alt=""></a>
-                                            </div>
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

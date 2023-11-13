@@ -41,11 +41,11 @@
                         @csrf
                         <div class="row">
                           <div class="col-md-6">
-                            <label class="col-form-label">Title Bangla :</label>
+                            <label class="col-form-label">Title English :</label>
                             <input type="text" class="form-control" name="news_title_en" />
                           </div>
                           <div class="col-md-6">
-                            <label class="col-form-label">Title English :</label>
+                            <label class="col-form-label">Title Bangla :</label>
                             <input type="text" class="form-control" name="news_title_bn" />
                           </div>
                         </div>
@@ -80,11 +80,11 @@
                       </div>
                         <div class="row">
                           <div class="col-md-6">
-                            <label class="col-form-label">Tags Bangla :</label>
+                            <label class="col-form-label">Tags English :</label>
                             <input type="text" class="form-control" name="news_tags_en" />
                           </div>
                           <div class="col-md-6">
-                            <label class="col-form-label">Tags English :</label>
+                            <label class="col-form-label">Tags Bangla :</label>
                             <input type="text" class="form-control" name="news_tags_bn" />
                           </div>
                         </div>
