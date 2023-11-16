@@ -79,7 +79,7 @@
                     <!-- Breaking News Widget -->
                     <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
                         <div class="title">
-                            <h6>Breaking News</h6>
+                            <h6>সদ্যপ্রাপ্ত সংবাদ</h6>
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
