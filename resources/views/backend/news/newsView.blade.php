@@ -62,7 +62,7 @@
                             </button>  
                           </td>
                           <td>
-                            <button type="button" class="btn btn-danger"><a href="{{url('delete.news/'.$row->news_id)}}"><i class="ti ti-trash text-light"></i></a>
+                            <button type="button" class="btn btn-danger"><a href="{{url('delete/news/'.$row->news_id)}}"><i class="ti ti-trash text-light"></i></a>
                             </button>  
                           </td>
                         </tr>

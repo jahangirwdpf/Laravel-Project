@@ -83,12 +83,11 @@
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
-                                @foreach($newses as $row)
-                                    <li class="title"><a href="">{{$row->news_title_en}}</a></li>
+                                @foreach($bnews as $row)
+                                    <li>
+                                        <a href="">{{$row->news_title_en}}</a>
+                                    </li>
                                 @endforeach
-                                {{-- <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</a></li>
-                                <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque</a></li> --}}
                             </ul>
                         </div>
                     </div>

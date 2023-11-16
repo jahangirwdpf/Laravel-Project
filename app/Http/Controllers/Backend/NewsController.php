@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use Image;
+use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
 {
@@ -46,7 +47,8 @@ class NewsController extends Controller
             $data['post_date']=date('d-m-Y');
             $image=$request->img;
             DB::table('news')->insert($data); 
-            if("$image"){
+
+            if($image){
                 $image_news=time().'.'.$image->getClientOriginalExtension();
                 $request->img->move('img', $image_news);
                 $data['img']=$image_news;
@@ -124,7 +126,8 @@ class NewsController extends Controller
     public function destroyNews($id)
     {
         $news=DB::table('news')->where('news_id', $id)->first();
-        // unlink($news->img);
+        // return dd($news);
+        File::delete('img/'. $news->img);
         DB::table('news')->where('news_id', $id)->delete();
         return redirect()->back()->with('message', 'Successfully News Deleted');
     }

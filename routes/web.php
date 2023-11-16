@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function()
     Route::get('get/subcat/{cat_id}', [NewsController::class, 'getSubCat']);
     Route::post('/store/news', [NewsController::class, 'storeNews']);
     Route::get('/newsView', [NewsController::class, 'showNews']);
-    Route::get('/delete.news/{news_id}', [NewsController::class, 'destroyNews']);
+    Route::get('/delete/news/{news_id}', [NewsController::class, 'destroyNews']);
     Route::get('/edit.news/{news_id}', [NewsController::class, 'editNews']);
     Route::post('/update/news/{news_id}', [NewsController::class, 'updateNews']);
 });
