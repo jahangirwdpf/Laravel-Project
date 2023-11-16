@@ -55,7 +55,7 @@
                             <select name="cat_id" class="form-control" >
                               <option selected="" disabled="">Choose Category</option>
                                 @foreach ($category as $row)
-                                  <option value="{{$row->cat_id}}">{{$row->cat_name_en}}</option>
+                                  <option value="{{$row->cat_id}}">{{$row->cat_name_bn}}</option>
                                 @endforeach
                             </select>
                           </div>
@@ -149,25 +149,24 @@
             </div>
           </div>
 <!----------------- content-wrapper ends ----------------------------------------->
-        </div>
-    @include('footer')
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $('select[name="cat_id"]').on('change', function(){
-          var cat_id=$(this).val();
-            $.ajax({
-              url:"{{url('get/subcat/')}}/"+cat_id,
-              Method:"GET",
-              dataType:"json",
-              success:function(data){
-                $("#subcat_id").empty();
-                  $.each(data,function(key,value){
-                    $("#subcat_id").append('<option value="'+value.subcat_id+'">'+value.subcat_name_en+'</option>');
-              });
-            },
-          });
-        });
-      });
-    </script>
-  
+          </div>
+                @include('footer')
+                <script type="text/javascript">
+                  $(document).ready(function(){
+                    $('select[name="cat_id"]').on('change', function(){
+                      var cat_id=$(this).val();
+                        $.ajax({
+                          url:"{{url('get/subcat/')}}/"+cat_id,
+                          Method:"GET",
+                          dataType:"json",
+                          success:function(data){
+                            $("#subcat_id").empty();
+                              $.each(data,function(key,value){
+                                $("#subcat_id").append('<option value="'+value.subcat_id+'">'+value.subcat_name_en+'</option>');
+                          });
+                        },
+                      });
+                    });
+                  });
+                </script>
 @endsection

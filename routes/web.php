@@ -38,18 +38,13 @@ Route::middleware('auth')->group(function()
     Route::get('/edit.subCategory/{subcat_id}', [SubCategoryController::class, 'editSubCat']);
     Route::post('/update.subCategory/{subcat_id}', [SubCategoryController::class, 'updateSub']);
 
-    // Division Section -------------------
-    Route::get('/division', [DivisionController::class, 'index']);
-    Route::post('/addDivision', [DivisionController::class, 'storeDiv']);
-    Route::get('/division.edit/{div_id}', [DivisionController::class, 'editDiv']);
-    Route::post('/division.update/{div_id}', [DivisionController::class, 'updateDiv']);
-    Route::get('/division.delete/{div_id}', [DivisionController::class, 'destroy']);
-
     // News Section -------------------
     Route::get('/newsCreate', [NewsController::class, 'index']);
     Route::get('get/subcat/{cat_id}', [NewsController::class, 'getSubCat']);
     Route::post('/store/news', [NewsController::class, 'storeNews']);
-    Route::get('/news', [UserController::class, 'newsAdd']);
     Route::get('/newsView', [NewsController::class, 'showNews']);
+    Route::get('/delete.news/{news_id}', [NewsController::class, 'destroyNews']);
+    Route::get('/edit.news/{news_id}', [NewsController::class, 'editNews']);
+    Route::post('/update/news/{news_id}', [NewsController::class, 'updateNews']);
 });
 require __DIR__.'/auth.php';
