@@ -45,19 +45,22 @@ class NewsController extends Controller
             $data['big_thumbnail']=$request->big_thumbnail;
             $data['post_date']=date('d-m-Y');
             $image=$request->img;
-
-            $image_news=time().'.'.$image->getClientOriginalExtension();
-            $request->img->move('img', $image_news);
-            $data['img']=$image_news;
-
-            DB::table('news')->insert($data, $image);
-            return redirect()->back()->with('message', 'Successfully News Inserted');
-
+            DB::table('news')->insert($data); 
+            if("$image"){
+                $image_news=time().'.'.$image->getClientOriginalExtension();
+                $request->img->move('img', $image_news);
+                $data['img']=$image_news;
+                DB::table('news')->insert($image);
+                return redirect()->back()->with('message', 'Successfully News Inserted');
+            }else{
+                return redirect()->back();
+            }
+            
             // $image=$request->img;
             // if(hasFile('$image')){
-            //     $image_news=uniqueid().'.'.$image->getClientOriginalExtension();
-            //     Image::make($image_news)->resize(500,350)->save('public/newsImages/'.$image_news);
-            //     $data['img']='public/newsImages/'.$image_news;
+            //     $image_news=time().'.'.$image->getClientOriginalExtension();
+            //     Image::make($image_news)->resize(500,350)->save('newsImages/'.$image_news);
+            //     $data['img']='newsImages/'.$image_news;
 
             //     DB::table('news')->insert($data);
             //     return redirect()->back();
