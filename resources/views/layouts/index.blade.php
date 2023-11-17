@@ -105,7 +105,23 @@
                 <div class="container-fluid">
                     <div class="row">
                         <!-- Single Blog Post Area -->
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-7">
+                            <!-- Single Blog Post Area -->
+                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="400ms" data-duration="1000ms">
+                                @foreach($firstThumbnail as $row)
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail bg-overlay">
+                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 600px"></a>
+                                </div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">{{$row->post_date}}</span>
+                                    <a href="#" class="post-title">{{$row->news_title_bn}}</a>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-5">
                             @foreach($bigThumbnail as $row)
                             <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
                                 <!-- Blog Thumbnail -->
@@ -115,67 +131,11 @@
                                 <!-- Blog Content -->
                                 <div class="blog-content">
                                     <span class="post-date">{{$row->post_date}}</span>
-                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
+                                    <a href="#" class="post-title">{{$row->news_title_bn}}</a>
                                 </div>
                             </div>
                             <br>
                             @endforeach
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <!-- Single Blog Post Area -->
-                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
-                                @foreach($firstThumbnail as $row)
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 600px"></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">{{$row->post_date}}</span>
-                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Slide -->
-            <div class="single-slide">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- Single Blog Post Area -->
-                        <div class="col-12 col-md-6">
-                            @foreach($bigThumbnail as $row)
-                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 300px"></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">{{$row->post_date}}</span>
-                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
-                                </div>
-                            </div>
-                            <br>
-                            @endforeach
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <!-- Single Blog Post Area -->
-                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
-                                @foreach($firstThumbnail as $row)
-                                <!-- Blog Thumbnail -->
-                                <div class="blog-thumbnail bg-overlay">
-                                    <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 600px"></a>
-                                </div>
-                                <!-- Blog Content -->
-                                <div class="blog-content">
-                                    <span class="post-date">{{$row->post_date}}</span>
-                                    <a href="#" class="post-title">{{$row->news_title_en}}</a>
-                                </div>
-                                @endforeach
-                            </div>
                         </div>
                     </div>
                 </div>
