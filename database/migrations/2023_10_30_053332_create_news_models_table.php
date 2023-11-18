@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('first_section')->nullable;
             $table->string('first_section_thumbnail')->nullable;
             $table->string('big_thumbnail')->nullable;
+            $table->string('status')->nullable;
             $table->string('post_date')->nullable;
             $table->timestamps();
         });

@@ -13,7 +13,6 @@ class NewsController extends Controller
         $news = DB::table('news')->get();
         $category = DB::table('category')->get();
         $image_news = DB::table('news')->get();
-
         return view ('backend.news.newsAdd', compact('news', 'category', 'image_news'));
     }
 
@@ -43,7 +42,7 @@ class NewsController extends Controller
             $data['first_section']=$request->first_section;
             $data['first_section_thumbnail']=$request->first_section_thumbnail;
             $data['big_thumbnail']=$request->big_thumbnail;
-            $data['post_date']=date('d-m-Y');
+            $data['post_date']=date('d-m-Y H:i:s');
             
             $image=$request->img;
             $image_news=time().'.'.$image->getClientOriginalExtension();
@@ -107,6 +106,7 @@ class NewsController extends Controller
             $data['first_section']=$request->first_section;
             $data['first_section_thumbnail']=$request->first_section_thumbnail;
             $data['big_thumbnail']=$request->big_thumbnail;
+            $data['status']= '2';
             $data['post_date']=date('d-m-Y');
 
             $oldimg= $request->oldimg;
