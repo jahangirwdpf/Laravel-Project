@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use DB;
 use Image;
+use Auth;
 
 class NewsController extends Controller
 {
@@ -33,6 +34,7 @@ class NewsController extends Controller
             $data['news_title_en']=$request->news_title_en;
             $data['news_title_bn']=$request->news_title_bn;
             $data['cat_id']=$request->cat_id;
+            $data['user_id']=Auth::id();
             $data['subcat_id']=$request->subcat_id;
             $data['news_details_en']=$request->news_details_en;
             $data['news_details_bn']=$request->news_details_bn;
@@ -106,7 +108,6 @@ class NewsController extends Controller
             $data['first_section']=$request->first_section;
             $data['first_section_thumbnail']=$request->first_section_thumbnail;
             $data['big_thumbnail']=$request->big_thumbnail;
-            $data['status']= '2';
             $data['post_date']=date('d-m-Y');
 
             $oldimg= $request->oldimg;
