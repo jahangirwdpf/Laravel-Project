@@ -111,11 +111,19 @@
                               </label>
                             </div>
                           </div>
-                          <div class="col-sm-3">
+                          <div class="col-sm-2">
                             <div class="form-check">
                               <label class="form-check-label" for="fsection">
                                 <input type="checkbox" class="form-check-input" name="first_section" id="fsection" value="1">
-                                First Section
+                                1st Section
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-2">
+                            <div class="form-check">
+                              <label class="form-check-label" for="ssectiont">
+                                <input type="checkbox" class="form-check-input" name="second_section_thumbnail" id="ssectiont" value="1">
+                                2nd Section
                               </label>
                             </div>
                           </div>
@@ -123,11 +131,11 @@
                             <div class="form-check">
                               <label class="form-check-label" for="fsectiont">
                                 <input type="checkbox" class="form-check-input" name="first_section_thumbnail" id="fsectiont" value="1">
-                                First Section Thumbnail
+                                1st Section Thumbnail
                               </label>
                             </div>
                           </div>
-                          <div class="col-sm-3">
+                          <div class="col-sm-2">
                             <div class="form-check">
                               <label class="form-check-label" for="bthumb">
                                 <input type="checkbox" class="form-check-input" name="big_thumbnail" id="bthumb" value="1">

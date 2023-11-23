@@ -89,7 +89,7 @@
                                 <label class="col-form-label">Old Image :</label>
                                 <br>
                                 <img src="{{URL::to('img/'.$news->img)}}" alt="photo" style="height: 80px; width: 100px;">
-                                <input type="hidden" id="" name="oldimg" class="form-control file-upload-default" value="$news->img">
+                                <input type="hidden" id="" name="oldimg" class="form-control file-upload-default" value="{{$news->img}}" />
                             </div>
                         </div>
                         <div class="row">
@@ -117,7 +117,7 @@
                         <hr>
                         <h4 class="text-center">Extra Option</h4>
                         <div class="row">
-                          <div class="col-sm-3">
+                          <div class="col-sm-4">
                             <div class="form-check">
                               <label class="form-check-label" for="bnews">
                                 <input type="checkbox" class="form-check-input" name="breaking_news" id="bnews" value="1"
@@ -128,7 +128,7 @@
                               </label>
                             </div>
                           </div>
-                          <div class="col-sm-3">
+                          <div class="col-sm-4">
                             <div class="form-check">
                               <label class="form-check-label" for="fsection">
                                 <input type="checkbox" class="form-check-input" name="first_section" id="fsection" value="1"
@@ -139,7 +139,7 @@
                               </label>
                             </div>
                           </div>
-                          <div class="col-sm-3">
+                          <div class="col-sm-4">
                             <div class="form-check">
                               <label class="form-check-label" for="fsectiont">
                                 <input type="checkbox" class="form-check-input" name="first_section_thumbnail" id="fsectiont" value="1" 
@@ -150,14 +150,36 @@
                               </label>
                             </div>
                           </div>
-                          <div class="col-sm-3">
+                          <div class="col-sm-4">
                             <div class="form-check">
                               <label class="form-check-label" for="bthumb">
                                 <input type="checkbox" class="form-check-input" name="big_thumbnail" id="bthumb" value="1" 
                                     <?php
-                                        if ($news->first_section_thumbnail==1){ echo "checked"; }
+                                        if ($news->big_thumbnail==1){ echo "checked"; }
                                     ?>>
                                 Big Thumbnail 
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="form-check">
+                              <label class="form-check-label" for="ssectiont">
+                                <input type="checkbox" class="form-check-input" name="second_section_thumbnail" id="ssectiont" value="1" 
+                                    <?php
+                                        if ($news->second_section_thumbnail==1){ echo "checked"; }
+                                    ?>>
+                                Second Section Thumbnail
+                              </label>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="form-check">
+                              <label class="form-check-label" for="status">
+                                <input type="checkbox" class="form-check-input" name="status" id="status" value="1" 
+                                    <?php
+                                        if ($news->status==1){ echo "checked"; }
+                                    ?>>
+                                Status 
                               </label>
                             </div>
                           </div>

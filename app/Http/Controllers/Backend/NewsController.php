@@ -44,6 +44,8 @@ class NewsController extends Controller
             $data['first_section']=$request->first_section;
             $data['first_section_thumbnail']=$request->first_section_thumbnail;
             $data['big_thumbnail']=$request->big_thumbnail;
+            $data['second_section_thumbnail']=$request->second_section_thumbnail;
+            $data['status']=$request->status;
             $data['post_date']=date('d-m-Y H:i:s');
             
             $image=$request->img;
@@ -53,18 +55,6 @@ class NewsController extends Controller
             
             DB::table('news')->insert($data, $image);
             return redirect()->back()->with('message', 'Successfully News Inserted');
-
-            // $image=$request->img;
-            // if(hasFile('$image')){
-            //     $image_news=uniqueid().'.'.$image->getClientOriginalExtension();
-            //     Image::make($image_news)->resize(500,350)->save('public/newsImages/'.$image_news);
-            //     $data['img']='public/newsImages/'.$image_news;
-
-            //     DB::table('news')->insert($data);
-            //     return redirect()->back();
-            // }else{
-            //     return redirect()->back();
-            // }
     }
 
     // Show News -----------------------------
@@ -75,8 +65,6 @@ class NewsController extends Controller
         ->join('sub_category', 'news.subcat_id','=','sub_category.subcat_id')
         ->select('news.*','category.cat_name_en','category.cat_name_bn','sub_category.subcat_name_en','sub_category.subcat_name_bn')
         ->get()->sortDesc();
-        // return dd($newses);
-        // $bigThumbnail=DB::table('news')->where('big_thumbnail',1)->get();
         return view ('backend.news.newsView', compact('newses'));  
     }
 
@@ -86,6 +74,7 @@ class NewsController extends Controller
         $news=DB::table('news')->where('news_id', $id)->first();
         $category = DB::table('category')->get();
         $subCat = DB::table('sub_category')->get();
+        return dd($news);
         return view ('backend.news.newsEdit', compact('news','category','subCat'));
     }
 
@@ -108,7 +97,9 @@ class NewsController extends Controller
             $data['first_section']=$request->first_section;
             $data['first_section_thumbnail']=$request->first_section_thumbnail;
             $data['big_thumbnail']=$request->big_thumbnail;
-            $data['post_date']=date('d-m-Y');
+            $data['second_section_thumbnail']=$request->second_section_thumbnail;
+            $data['status']=$request->status;
+            $data['post_date']=date('d-m-Y H:i:s');
 
             $oldimg= $request->oldimg;
             $image=$request->img;
