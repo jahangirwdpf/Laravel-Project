@@ -14,10 +14,10 @@ class WebController extends Controller
             ->join('sub_category', 'news.subcat_id','=','sub_category.subcat_id')
             ->select('news.*','category.cat_name_en','category.cat_name_bn','sub_category.subcat_name_en')
             ->where('status',1)->get()->sortDesc();
-            $bnews=DB::table('news')->where('breaking_news',1)->get()->sortDesc(); 
-            $bigThumbnail=DB::table('news')->where('big_thumbnail',1)->get()->sortDesc(); 
-            $firstThumbnail=DB::table('news')->where('first_section_thumbnail',1)->get()->sortDesc(); 
-            $firstSection=DB::table('news')->where('first_section',1)->get()->sortDesc();
+            $bnews=DB::table('news')->where('breaking_news',1)->where('status',1)->get()->sortDesc(); 
+            $bigThumbnail=DB::table('news')->where('big_thumbnail',1)->where('status',1)->get()->sortDesc(); 
+            $firstThumbnail=DB::table('news')->where('first_section_thumbnail',1)->where('status',1)->get()->sortDesc(); 
+            $firstSection=DB::table('news')->where('first_section',1)->where('status',1)->get()->sortDesc();
         
             // return dd($newses);
         return view('layouts.index', compact('newses', 'bigThumbnail', 'firstThumbnail', 'category', 'firstSection', 'bnews'));
