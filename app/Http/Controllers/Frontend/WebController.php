@@ -18,10 +18,7 @@ class WebController extends Controller
             $bigThumbnail=DB::table('news')->where('big_thumbnail',1)->where('status',1)->get()->sortDesc(); 
             $firstThumbnail=DB::table('news')->where('first_section_thumbnail',1)->where('status',1)->get()->sortDesc(); 
             $firstSection=DB::table('news')->where('first_section',1)->where('status',1)->get()->sortDesc();
-<<<<<<< HEAD
-=======
             $secondSection=DB::table('news')->where('second_section_thumbnail',1)->where('status',1)->get()->sortDesc();
->>>>>>> 73ba2d6e5691bd8dba92c94a13a3d06d765f5f49
         
             // return dd($newses);
         return view('layouts.index', compact('newses', 'bigThumbnail', 'firstThumbnail', 'category', 'firstSection', 'bnews', 'secondSection'));

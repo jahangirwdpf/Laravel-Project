@@ -46,5 +46,9 @@ Route::middleware('auth')->group(function()
     Route::get('/delete/news/{news_id}', [NewsController::class, 'destroyNews']);
     Route::get('/edit/news/{news_id}', [NewsController::class, 'editNews']);
     Route::post('/update/news/{news_id}', [NewsController::class, 'updateNews']);
+
+    // According to category
+    Route::post('/news/allcatNews/{cat_id}', [NewsController::class, 'allcatNewses']);
+
 });
 require __DIR__.'/auth.php';

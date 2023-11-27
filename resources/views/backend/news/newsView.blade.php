@@ -41,10 +41,8 @@
                         <tr>
                           <th>ID</th>
                           <th>Category Name</th>
-                          <th>Sub-Cate. Name</th>
                           <th>News Title</th>
                           <th>News Image</th>
-                          <th>News Tags</th>
                           <th>Status</th>
                           <th class="text-center" colspan= "2">Action</th>
                         </tr>
@@ -54,17 +52,15 @@
                         <tr>
                           <td>{{$row->news_id}}</td>
                           <td>{{$row->cat_name_en}} || {{$row->cat_name_bn}}</td>
-                          <td>{{$row->subcat_name_bn}}</td>
                           <td>{{$row->news_title_bn}}</td>
                           <td><img src="{{asset('img/'.$row->img)}}" alt=""></td>
-                          <td>{{$row->news_tags_bn}}</td>
                           <td>
                             <?php
                               if ($row->status==1){ echo "Active"; }else{ echo "Pending";}
                             ?>
                           </td>
                           <td>
-                            <button type="button" class="btn btn-primary" style="float: right;"><a href="{{url('edit.news/'.$row->news_id)}}"><i class="ti ti-pencil text-light"></i></a>
+                            <button type="button" class="btn btn-primary" style="float: right;"><a href="{{url('edit/news/'.$row->news_id)}}"><i class="ti ti-pencil text-light"></i></a>
                             </button>  
                           </td>
                           <td>

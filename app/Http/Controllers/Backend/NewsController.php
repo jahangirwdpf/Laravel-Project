@@ -74,7 +74,7 @@ class NewsController extends Controller
         $news=DB::table('news')->where('news_id', $id)->first();
         $category = DB::table('category')->get();
         $subCat = DB::table('sub_category')->get();
-        return dd($news);
+        // return dd($news);
         return view ('backend.news.newsEdit', compact('news','category','subCat'));
     }
 
@@ -103,6 +103,7 @@ class NewsController extends Controller
 
             $oldimg= $request->oldimg;
             $image=$request->img;
+// return dd($data);
 
             if($image){
                 $image_news=time().'.'.$image->getClientOriginalExtension();
@@ -125,5 +126,16 @@ class NewsController extends Controller
         File::delete('img'.$news->img);
         DB::table('news')->where('news_id', $id)->delete();
         return redirect()->back();
+    }
+
+
+    public function allcatNewses(){
+        $newses = DB::table('news')
+        ->join('category', 'news.cat_id','=','category.cat_id')
+        ->join('sub_category', 'news.subcat_id','=','sub_category.subcat_id')
+        ->select('news.*','category.cat_name_en','category.cat_name_bn','sub_category.subcat_name_en','sub_category.subcat_name_bn')
+        ->get()->sortDesc();
+        
+        return view('backend.news.newsView', compact('newses'));
     }
 }

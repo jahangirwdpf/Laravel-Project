@@ -37,7 +37,7 @@
                 <div class="card-body">
                     <div class="card-body">
                       <h4 class="card-title">News Edit Here</h4>
-                      <form class="form-sample" action="{{url('update/news/'.$news->news_id)}}" method="POST" enctype="multipart/form-data">
+                      <form class="form-sample" action="{{url('/update/news/'.$news->news_id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                           <div class="col-md-6">

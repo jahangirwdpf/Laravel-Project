@@ -48,7 +48,7 @@
                             <div class="classynav">
                                 <ul>
                                     @foreach($category as $row)
-                                    <li><a href="">{{$row->cat_name_bn}}</a>
+                                    <li><a href="{{url('/singlePost')}}">{{$row->cat_name_bn}}</a>
                                         @php
                                             $subCatagory=DB::table('sub_category')->where('cat_id', $row->cat_id)->get();
                                         @endphp
@@ -531,7 +531,7 @@
                         <!-- Blog Content -->
                         <div class="blog-content">
                             <span class="post-date">June 20, 2018</span>
-                            <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                            <a href="{{url('/singlePost')}}" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
                             <a href="#" class="post-author">By Michael Smith</a>
                         </div>
                     </div>
