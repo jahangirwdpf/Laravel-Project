@@ -85,7 +85,7 @@
                             <ul>
                                 @foreach($bnews as $row)
                                     <li>
-                                        <a href="">{{$row->news_title_en}}</a>
+                                        <a href="">{{$row->news_title_bn}}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -106,9 +106,8 @@
                     <div class="row">
                         <!-- Single Blog Post Area -->
                         <div class="col-12 col-md-7">
-                            <!-- Single Blog Post Area -->
-                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="400ms" data-duration="1000ms">
-                                @foreach($firstThumbnail as $row)
+                            @foreach($bigThumbnail as $row)
+                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail bg-overlay">
                                     <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 600px"></a>
@@ -118,12 +117,14 @@
                                     <span class="post-date">{{$row->post_date}}</span>
                                     <a href="#" class="post-title">{{$row->news_title_bn}}</a>
                                 </div>
-                                @endforeach
                             </div>
+                            <br>
+                            @endforeach
                         </div>
                         <div class="col-12 col-md-5">
-                            @foreach($bigThumbnail as $row)
-                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
+                            <!-- Single Blog Post Area -->
+                            @foreach($firstThumbnail as $row)
+                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="400ms" data-duration="1000ms">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail bg-overlay">
                                     <a href="#"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 300px"></a>
@@ -182,6 +183,22 @@
                                         </div>
                                         @endforeach
                                     </div>
+                                    <div class="col-12 col-sm-6 d-flex">
+                                        @foreach($secondSection as $row)
+                                        <div class="col-md-12 single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="singlePost"><img src="{{asset('img/'.$row->img)}}" alt="" style="height: 250px"></a>
+                                            </div>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">{{$row->post_date}}</span>
+                                                <a href="#" class="post-title">{{$row->news_title_bn}}</a>
+                                                <a href="#" class="post-author">{{$row->news_tags_bn}}</a>
+                                            </div>
+                                        </div>
+                                        @endforeach
+                                    </div>
                                     <div class="d-flex">
                                         <div class="col-12 col-sm-6">
                                             @foreach($firstSection as $row)
@@ -200,7 +217,7 @@
                                             @endforeach
                                         </div>
                                         <div class="col-12 col-sm-6">
-                                            @foreach($firstSection as $row)
+                                            @foreach($secondSection as $row)
                                                 <div class="col-md-12 single-blog-post d-flex style-4 mb-30">
                                                     <!-- Blog Thumbnail -->
                                                     <div class="blog-thumbnail">
@@ -454,7 +471,7 @@
                                 <div class="blog-content">
                                     <span class="post-date">June 20, 2018</span>
                                     <p class="post-title">Elon Musk: Tesla worker admitted to sabotage</p>
-                                    <a href="#" class="post-author">By Michael Smith</a>
+                                    <a href="{{url('/singlePost')}}" class="post-author">By Michael Smith</a>
                                 </div>
                             </div>
 
