@@ -154,7 +154,7 @@
                     <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                     <div class="ml-xl-4 mt-3">
                     <p class="card-title">Detailed News</p>
-                        <h1 class="text-primary">34040</h1>
+                        <h1 class="text-primary">15</h1>
                         <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
                         <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                     </div>  

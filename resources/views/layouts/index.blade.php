@@ -183,7 +183,7 @@
                                         </div>
                                         @endforeach
                                     </div>
-                                    <div class="col-12 col-sm-6 d-flex">
+                                    {{-- <div class="col-12 col-sm-6 d-flex">
                                         @foreach($secondSection as $row)
                                         <div class="col-md-12 single-blog-post style-2 mb-5">
                                             <!-- Blog Thumbnail -->
@@ -198,7 +198,7 @@
                                             </div>
                                         </div>
                                         @endforeach
-                                    </div>
+                                    </div> --}}
                                     <div class="d-flex">
                                         <div class="col-12 col-sm-6">
                                             @foreach($firstSection as $row)
