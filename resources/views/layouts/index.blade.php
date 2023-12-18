@@ -85,7 +85,7 @@
                             <ul>
                                 @foreach($bnews as $row)
                                     <li>
-                                        <a href="">{{$row->news_title_bn}}</a>
+                                        <a class="text-danger" href="">{{$row->news_title_bn}}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -370,13 +370,13 @@
                                 <input type="email" name="nl-email" id="nlemail" placeholder="Your E-mail">
                                 <button type="submit" class="btn newsbox-btn w-100">Subscribe</button>
                             </form>
-                            <p class="mt-30">Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh . volutpat lobortis.</p>
+                            <p class="mt-30">Please have get your Identity. Submit your Questions or Opinion to Know details about We.</p>
                         </div>
 
                         <!-- Add Widget -->
                         <div class="single-widget-area add-widget mb-30">
                             <a href="#">
-                                <img src="{{asset('contents/frontend')}}/img/bg-img/add3.png" alt="">
+                                <img src="{{asset('contents/frontend')}}/img/bg-img/add000.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -387,7 +387,7 @@
     <!-- ##### Intro News Area End ##### -->
 
     <!-- ##### Video Area Start ##### -->
-    <section class="video-area bg-img bg-overlay bg-fixed" style="background-image: url({{asset('contents/frontend')}}/img/bg-img/10.jpg);">
+    <section class="video-area bg-img bg-overlay bg-fixed" style="background-image: url({{asset('contents/frontend')}}/img/bg-img/1.jpg);">
         <div class="container">
             <div class="row">
                 <!-- Featured Video Area -->
@@ -395,7 +395,7 @@
                     <div class="featured-video-area d-flex align-items-center justify-content-center">
                         <div class="video-content text-center">
                             <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-                            <span class="published-date">June 20, 2018</span>
+                            <span class="published-date">Dec 05, 2023</span>
                             <h3 class="video-title">Traffic Problems in Time Square</h3>
                         </div>
                     </div>
@@ -415,15 +415,15 @@
                             <div class="single-blog-post style-3">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/11.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/004.jpg" alt=""></a>
                                     <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                 </div>
 
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <p class="post-title">Elon Musk: Tesla worker admitted to sabotage</p>
-                                    <a href="#" class="post-author">By Michael Smith</a>
+                                    <span class="post-date">Dec 10, 2023</span>
+                                    <p class="post-title">লোহিত সাগর নিয়ে কেন উদ্বেগ, বিশ্ববাণিজ্যের জন্য এটি কতটা গুরুত্বপূর্ণ</p>
+                                    <a href="#" class="post-author">বাণিজ্য ডেস্ক</a>
                                 </div>
                             </div>
 
@@ -431,15 +431,15 @@
                             <div class="single-blog-post style-3">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/12.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/003.jpg" alt=""></a>
                                     <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                 </div>
 
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <p class="post-title">Rachel Sm ith breaks down while discussing border crisis </p>
-                                    <a href="#" class="post-author">By Michael Smith</a>
+                                    <span class="post-date">Dec 10, 2023</span>
+                                    <p class="post-title">মূল্যস্ফীতি ঠেকাতে ১১ হাজার কোটি ডলারের বেশি খরচ করবে জাপান </p>
+                                    <a href="#" class="post-author">বিশ্ব অর্থনীতি</a>
                                 </div>
                             </div>
 
@@ -447,15 +447,15 @@
                             <div class="single-blog-post style-3">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/13.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/000.jpg" alt=""></a>
                                     <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                 </div>
 
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <p class="post-title">Dow falls 287 points as trade war fears escalate</p>
-                                    <a href="#" class="post-author">By Michael Smith</a>
+                                    <span class="post-date">Dec 10, 2023</span>
+                                    <p class="post-title">ভারত পেয়েছে এক লাখ কোটি রুপির বিনিয়োগ প্রস্তাব, গেছে বাংলাদেশ থেকেও</p>
+                                    <a href="#" class="post-author">ভারত ডেস্ক</a>
                                 </div>
                             </div>
 
@@ -463,15 +463,14 @@
                             <div class="single-blog-post style-3">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/11.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/004.jpg" alt=""></a>
                                     <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                 </div>
-
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <p class="post-title">Elon Musk: Tesla worker admitted to sabotage</p>
-                                    <a href="{{url('/singlePost')}}" class="post-author">By Michael Smith</a>
+                                    <span class="post-date">Dec 10, 2023</span>
+                                    <p class="post-title">সরকারের সাজানো মামলার গুমর ফাঁস হয়েছে: রিজভী</p>
+                                    <a href="{{url('/singlePost')}}" class="post-author">নিজস্ব প্রতিবেদক</a>
                                 </div>
                             </div>
 
@@ -479,15 +478,15 @@
                             <div class="single-blog-post style-3">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/12.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/003.jpg" alt=""></a>
                                     <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                 </div>
 
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <p class="post-title">Rachel Sm ith breaks down while discussing border crisis </p>
-                                    <a href="#" class="post-author">By Michael Smith</a>
+                                    <span class="post-date">Dec 15, 2023</span>
+                                    <p class="post-title">কুমিল্লার তিতাসে আওয়ামী লীগ নেতাকে ছুরিকাঘাতে হত্যা </p>
+                                    <a href="#" class="post-author">কুমিল্লা প্রতিবেদক</a>
                                 </div>
                             </div>
 
@@ -495,15 +494,15 @@
                             <div class="single-blog-post style-3">
                                 <!-- Blog Thumbnail -->
                                 <div class="blog-thumbnail">
-                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/13.jpg" alt=""></a>
+                                    <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/000.jpg" alt=""></a>
                                     <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                                 </div>
 
                                 <!-- Blog Content -->
                                 <div class="blog-content">
-                                    <span class="post-date">June 20, 2018</span>
-                                    <p class="post-title">Dow falls 287 points as trade war fears escalate</p>
-                                    <a href="#" class="post-author">By Michael Smith</a>
+                                    <span class="post-date">Dec 10, 2023</span>
+                                    <p class="post-title">ভারত পেয়েছে এক লাখ কোটি রুপির বিনিয়োগ প্রস্তাব, গেছে বাংলাদেশ থেকেও</p>
+                                    <a href="#" class="post-author">ভারত ডেস্ক</a>
                                 </div>
                             </div>
 
@@ -525,14 +524,14 @@
                     <div class="single-blog-post style-2 mb-5">
                         <!-- Blog Thumbnail -->
                         <div class="blog-thumbnail">
-                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/4.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/003.jpg" alt=""></a>
                         </div>
 
                         <!-- Blog Content -->
                         <div class="blog-content">
-                            <span class="post-date">June 20, 2018</span>
-                            <a href="{{url('/singlePost')}}" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
-                            <a href="#" class="post-author">By Michael Smith</a>
+                            <span class="post-date">Dec 08, 2023</span>
+                            <a href="{{url('/singlePost')}}" class="post-title">মূল্যস্ফীতি ঠেকাতে ১১ হাজার কোটি ডলারের বেশি খরচ করবে জাপান</a>
+                            <a href="#" class="post-author">নিজস্ব প্রতিবেদক</a>
                         </div>
                     </div>
                 </div>
@@ -542,14 +541,14 @@
                     <div class="single-blog-post style-2 mb-5">
                         <!-- Blog Thumbnail -->
                         <div class="blog-thumbnail">
-                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/5.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/0005.jpg" alt=""></a>
                         </div>
 
                         <!-- Blog Content -->
                         <div class="blog-content">
-                            <span class="post-date">June 20, 2018</span>
-                            <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis </a>
-                            <a href="#" class="post-author">By Michael Smith</a>
+                            <span class="post-date">Dec 05, 2023</span>
+                            <a href="#" class="post-title">আমি সেই যোদ্ধা, যে অস্ত্র জমা দিয়েছি, কিন্তু ট্রেনিং জমা দিইনি </a>
+                            <a href="#" class="post-author">মনজুর কাদের- ঢাকা</a>
                         </div>
                     </div>
                 </div>
@@ -559,14 +558,14 @@
                     <div class="single-blog-post style-2 mb-5">
                         <!-- Blog Thumbnail -->
                         <div class="blog-thumbnail">
-                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/6.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/0004.jpg" alt=""></a>
                         </div>
 
                         <!-- Blog Content -->
                         <div class="blog-content">
-                            <span class="post-date">June 20, 2018</span>
-                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
-                            <a href="#" class="post-author">By Michael Smith</a>
+                            <span class="post-date">Dec 13, 2023</span>
+                            <a href="#" class="post-title">বিয়ে নিয়ে কি ভাবছেন বাঁধন, কেমন ছেলে পছন্দ</a>
+                            <a href="#" class="post-author">বিনোদন প্রতিবেদক- ঢাকা</a>
                         </div>
                     </div>
                 </div>
@@ -576,14 +575,14 @@
                     <div class="single-blog-post style-2 mb-5">
                         <!-- Blog Thumbnail -->
                         <div class="blog-thumbnail">
-                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/7.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/0003.jpg" alt=""></a>
                         </div>
 
                         <!-- Blog Content -->
                         <div class="blog-content">
-                            <span class="post-date">June 20, 2018</span>
-                            <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
-                            <a href="#" class="post-author">By Michael Smith</a>
+                            <span class="post-date">Dec 08, 2023</span>
+                            <a href="#" class="post-title">রাজশাহী শহরে হরতালের সমর্থনে মিছিল, ৪ শিবির কর্মী আটক</a>
+                            <a href="#" class="post-author">প্রতিনিধি-রাজশাহী</a>
                         </div>
                     </div>
                 </div>
@@ -593,14 +592,14 @@
                     <div class="single-blog-post style-2 mb-5">
                         <!-- Blog Thumbnail -->
                         <div class="blog-thumbnail">
-                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/8.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/0006.jpg" alt=""></a>
                         </div>
 
                         <!-- Blog Content -->
                         <div class="blog-content">
-                            <span class="post-date">June 20, 2018</span>
-                            <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis </a>
-                            <a href="#" class="post-author">By Michael Smith</a>
+                            <span class="post-date">Dec 08, 2023</span>
+                            <a href="#" class="post-title">ওয়ান ব্যাংকে স্নাতক পাসে চাকরি, প্রয়োজন নেই অভিজ্ঞতার, পদ ৫০ </a>
+                            <a href="#" class="post-author">চাকরি-বাকরি প্রতিবেদক</a>
                         </div>
                     </div>
                 </div>
@@ -610,14 +609,14 @@
                     <div class="single-blog-post style-2 mb-5">
                         <!-- Blog Thumbnail -->
                         <div class="blog-thumbnail">
-                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/9.jpg" alt=""></a>
+                            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/002.jpg" alt=""></a>
                         </div>
 
                         <!-- Blog Content -->
                         <div class="blog-content">
-                            <span class="post-date">June 20, 2018</span>
-                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
-                            <a href="#" class="post-author">By Michael Smith</a>
+                            <span class="post-date">Dec 08, 2023</span>
+                            <a href="#" class="post-title">নির্বাচনের প্রচারে কৃত্রিম বুদ্ধিমত্তার ‘ইমরান খান’</a>
+                            <a href="#" class="post-author">নিজস্ব প্রতিনিধি</a>
                         </div>
                     </div>
                 </div>
@@ -634,7 +633,7 @@
     <!-- ##### Add Area Start ##### -->
     <div class="big-add-area mb-100">
         <div class="container-fluid">
-            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/add2.png" alt=""></a>
+            <a href="#"><img src="{{asset('contents/frontend')}}/img/bg-img/add00.jpeg" alt=""></a>
         </div>
     </div>
     <!-- ##### Add Area End ##### -->
